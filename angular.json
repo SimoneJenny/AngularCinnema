@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "FinalCinnema"
+    }
+  },
+  "defaultProject": "FinalCinnema",
+  "cli": {
+    "analytics": false
+  }
 }
