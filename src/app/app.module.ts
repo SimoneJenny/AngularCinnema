@@ -7,17 +7,17 @@ import { UserProfileComponent } from './Component/user-profile/user-profile.comp
 import { MoviesComponent } from './Component/movies/movies.component';
 import { GenreComponent } from './Component/genre/genre.component';
 import { TheaterComponent } from './Component/theater/theater.component';
-import { Routes } from '@angular/router';
+import { Routes, Router, RouterModule } from '@angular/router';
 import { ContactComponent } from './component/contact/contact.component';
+import {HttpClientModule} from '@angular/common/http'; //app get, set'
 
-
-const appRoutes : Routes =[
+const routes : Routes =[
   {path : 'Movies', component: MoviesComponent}, //skal matche
   {path : 'Profile', component: UserProfileComponent}, //skal matche
   {path : 'Info', component: ContactComponent}, //skal matche
 ]
 @NgModule({
-  declarations: [
+  declarations: [ //components, directives, pipes
     AppComponent,
     UserProfileComponent,
     MoviesComponent,
@@ -25,12 +25,14 @@ const appRoutes : Routes =[
     TheaterComponent,
     ContactComponent
   ],
-  imports: [
+  imports: [ //modules
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(routes),
+    HttpClientModule
   ],
 
-  providers: [],
+  providers: [], //services
   bootstrap: [AppComponent]
 })
 export class AppModule { }

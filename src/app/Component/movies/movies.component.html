@@ -1,189 +1,68 @@
-<!-- her skal der være et design med plakater og titel med mere- bundet med genre -->
+<!-- <form action="/Film">
+  <h1>Find film</h1>
+  <label for="Tittel"> Tittel:  </label>
+  <input type="Filmtitle">
+  <br><br><br>
+  <label for="Dato">Dato for film:  </label>
+  <input type="Dato">
+  <button onclick ="getDate">vælg dato</button>
+  <br>
+  <br>
+  <br>
+  <button>
+    Find film
+  </button>
+</form> -->
+<form action="/Film">
+  <h1>Find film</h1>
+  <label>Dato</label><br>
+  <input type="date">
+  <br><br><br>
+  <!-- <label>Titel</label><br>
+  <input type="tittel"> -->
+  <label>Film</label><br>
+  <select id="Genre">
+    <option value="1">Supermand</option>
+    <option value="2">OP</option>
+    <option value="3">Frozen2</option>
+    <option value="4">Topgun2</option>
+    <option value="5">The bouý</option>
+    <option value="6">Bad Boys</option>
+    <option value="7">Mit liv som rigmand</option>
+    <option value="8">The boy 2</option>
+    <option value="9">The Gentlemen</option>
+    <option value="10">Jeussic World</option>
+  </select>
+  <br><br><br>
+ <label>Genre</label><br>
+  <select id="Genre">
+    <option value="Gyser">Gyser</option>
+    <option value="Komedie">Komedie</option>
+    <option value="Romatisk">Romatisk</option>
+    <option value="Thriller">Thriller</option>
+    <option value="Children">Children</option>
+    <option value="Dokumentar">Dokumentar</option>
+    <option value="Anime">Anime</option>
 
-<style>
-  :host {
-    font-family:Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    color:black;
-
-  }
-  .toolbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    background-color: gray;
-    color: white;
-    font-weight: 800;
-  }
-
-  .toolbar img {
-    margin-left: 60 20px;
-  }
-
-  .toolbar #Cinnema-logo {
-    height: 60px;
-    margin: 50 80px;
-  }
-
-  .content {
-    display: flex;
-    margin:50px auto 10px;
-    padding: 0 16px;
-    max-width: 960px;
-    flex-direction: column;
-    align-items:center;
-  }
-
-  svg.material-icons {
-    height: 24px;
-    width: auto;
-  }
-
-  svg.material-icons:not(:last-child) {
-    margin-inline-start: 9px;
-  }
-
-
-  /* .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 16px;
-  } */
-
-  .card {
-    border-radius: 4px;
-    border: 1px solid #eee;
-    background-color: #8a3f3f;
-    height: 40px;
-    width: 200px;
-    margin: 0 8px 16px;
-    padding: 16px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.2s ease-in-out;
-    line-height: 24px;
-  }
-
-  .card-container .card:not(:last-child) {
-    margin-right: 0;
-  }
-
-  .card.card-small {
-    height: 16px;
-    width: 168px;
-  }
-
-  .card-container .card:not(.highlight-card) {
-    cursor: pointer;
-  }
-
-  .card-container .card:not(.highlight-card):hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
-  }
-
-  .card-container .card:not(.highlight-card):hover .material-icons path {
-    fill: rgb(105, 103, 103);
-  }
+  </select>
+  <br>
+  <br><br>
+  <button onclick ="getDate">Find Film</button>
+  <br>
+  <br>
+  <br>
+</form>
 
 
+  <p id="demo"></p>
 
-  a,
-  a:visited,
-  a:hover {
-    color: #1976d2;
-    text-decoration: none;
-  }
-
-  a:hover {
-    color: #125699;
-  }
-
-
-
-  /* Responsive Styles */
-  @media screen and (max-width: 767px) {
-
-
-    .card:not(.highlight-card) {
-      height: 16px;
-      margin: 8px 0;
-    }
-
-    .card.highlight-card span {
-      margin-left: 72px;
-    }
-    /* ul li{
-      list-style:none ;
-      display: inline-block;
-      float: left;
-
-
-    }
-     ul li a{
-       text-decoration: none;
-       font-size:  14px;
-       font-family: Arial, Helvetica, sans-serif;
-       color: black;
-
-     } */
-
-  }
-</style>
-<!-- <ul>
-  <li><a routerLink ="/Movie" routerLinkActive ="active">Movies</a>
-  <li><a routerLink ="/Profil" routerLinkActive ="active">Profil</a>
-  <li><a routerLink ="/contact" routerLinkActive ="active">Kontakt</a>
-  </li>
-</ul> -->
-
-
-<!-- Toolbar -->
-<div class="toolbar" role="banner">
-  <img
-    width="40"
-    alt="cinnema Logo"
-    src="https://www.naesbib.dk/sites/default/files/nfbio_pos_rgb_lille.png"
-  />
-  <span>Palads biograf</span>
-    <div class="spacer"></div>
-</div>
-
-<div class="content" role="main">
-
-  <div class="menu">
-
-  <!-- Next Steps -->
-  <h2>Menu</h2>
-<br>
-  <input type="hidden" #selection>
-
-  <div class="card-container">
-    <div class="card card-small" (click)="selection.value = 'Movie'" tabindex="0">
-        <svg class="material-icons" xmlns="" width="56" height="56" viewBox="0 0 24 24"></svg>
-        <a routerLink ="/Movie" routerLinkActive ="active">Movies</a>
-
+  <div *ngFor ="let item of movie">
+    <p>MovieId {{item.MovieId}} | Moviename: {{item.Tittle}} |Movie Description: {{item.Description}}</p>
     </div>
 
-    <div class="card card-small" (click)="selection.value = 'pwa'" tabindex="0">
-        <svg class="material-icons" xmlns="" width="56" height="56" viewBox="0 0 24 24"></svg>
-        <a routerLink ="/Profil" routerLinkActive ="active">Log på Profil</a>
-     </div>
-
-    <div class="card card-small" (click)="selection.value = 'dependency'" tabindex="0">
-      <svg class="material-icons" xmlns="" width="56" height="56" viewBox="0 0 24 24"></svg>
-      <a routerLink ="/contact" routerLinkActive ="active">Kontakt</a>
-    </div>
-
-</div>
-
-
-<router-outlet></router-outlet>
+<script>
+   function getDate() {
+      var x = document.getElementById("myDate").value;
+      document.getElementById("demo").innerHTML = x;}
+</script>
 

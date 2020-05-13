@@ -3,60 +3,46 @@
     font-family:Arial, Helvetica, sans-serif;
     font-size: 14px;
     color:black;
-
   }
   .toolbar {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 60px;
+    height: 80px;
     display: flex;
     align-items: center;
     background-color: gray;
     color: white;
-    font-weight: 800;
+    font-weight: 3000;
   }
 
-  .toolbar img {
-    margin-left: 60 20px;
-  }
-
+/* så knapperne bliver pæne */
   .toolbar #Cinnema-logo {
-    height: 60px;
+    height: 50px;
     margin: 50 80px;
   }
-
+/* så den ikke går op i baren */
   .content {
     display: flex;
-    margin:50px auto 10px;
-    padding: 0 16px;
+    margin:80px auto 10px;
+    padding: 10 16px;
     max-width: 960px;
     flex-direction: column;
     align-items:center;
   }
-
-  svg.material-icons {
-    height: 24px;
-    width: auto;
-  }
-
-  svg.material-icons:not(:last-child) {
-    margin-inline-start: 9px;
-  }
-
-
-  /* .card-container {
+  /* alligned to eachother */
+  .card-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 16px;
-  } */
-
+  }
+/* knapperne */
   .card {
     border-radius: 4px;
     border: 1px solid #eee;
-    background-color: #8a3f3f;
+    background-color: black;
     height: 40px;
     width: 200px;
     margin: 0 8px 16px;
@@ -69,30 +55,18 @@
     line-height: 24px;
   }
 
-  .card-container .card:not(:last-child) {
-    margin-right: 0;
-  }
 
+/* knap størrelse */
   .card.card-small {
     height: 16px;
     width: 168px;
   }
-
-  .card-container .card:not(.highlight-card) {
-    cursor: pointer;
-  }
-
+/* design effekt */
   .card-container .card:not(.highlight-card):hover {
     transform: translateY(-3px);
-    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+    box-shadow: 20 30px 17px rgba(0, 0, 0, 0.35);
   }
-
-  .card-container .card:not(.highlight-card):hover .material-icons path {
-    fill: rgb(105, 103, 103);
-  }
-
-
-
+/* text farve */
   a,
   a:visited,
   a:hover {
@@ -100,57 +74,20 @@
     text-decoration: none;
   }
 
-  a:hover {
-    color: #125699;
-  }
-
-
-
-  /* Responsive Styles */
-  @media screen and (max-width: 767px) {
-
-
-    .card:not(.highlight-card) {
-      height: 16px;
-      margin: 8px 0;
-    }
-
-    .card.highlight-card span {
-      margin-left: 72px;
-    }
-    /* ul li{
-      list-style:none ;
-      display: inline-block;
-      float: left;
-
-
-    }
-     ul li a{
-       text-decoration: none;
-       font-size:  14px;
-       font-family: Arial, Helvetica, sans-serif;
-       color: black;
-
-     } */
-
-  }
 </style>
-<!-- <ul>
-  <li><a routerLink ="/Movie" routerLinkActive ="active">Movies</a>
-  <li><a routerLink ="/Profil" routerLinkActive ="active">Profil</a>
-  <li><a routerLink ="/contact" routerLinkActive ="active">Kontakt</a>
-  </li>
-</ul> -->
+<!-- kald -->
+<!-- <app-genre></app-genre>
+<app-movies></app-movies>
+<app-contact></app-contact>
+<app-user-profile></app-user-profile> -->
 
-
-<!-- Toolbar -->
 <div class="toolbar" role="banner">
   <img
     width="40"
     alt="cinnema Logo"
-    src="https://www.naesbib.dk/sites/default/files/nfbio_pos_rgb_lille.png"
+    src="https://www.naesbib.dk/sites/default/files/nfbio_pos_rgb_lille.png " height="60px" width="60px"
   />
-  <span>Palads biograf</span>
+  <span> Cinnema</span>
     <div class="spacer"></div>
 </div>
 
@@ -158,37 +95,21 @@
 
   <div class="menu">
 
-
-  <!-- vigtig information -->
-  <h2>vigtig information</h2>
-  <p>Kære bruger vi følger sundhedstyrrelsens retningslinjer, så det er ikke muligt at
-    bestille billetter, før vi høre nyt omkring Convid-19. Vi håber på jeres forståelse og ser frem til at åbne op igen snarest muligt
-  </p>
-<br>
-<br>
-  <!-- Next Steps -->
-  <h2>Menu</h2>
-<br>
+<nav>
   <input type="hidden" #selection>
+    <div class="card-container">
+      <div class="card card-small" (click)="selection.value = 'Movie'" tabindex="0">
+          <a routerLink ="/Movies" routerLinkActive ="active">Movies</a>
+      </div>
 
-  <div class="card-container">
-    <div class="card card-small" (click)="selection.value = 'Movie'" tabindex="0">
-        <svg class="material-icons" xmlns="" width="56" height="56" viewBox="0 0 24 24"></svg>
-        <a routerLink ="/Movie" routerLinkActive ="active">Movies</a>
+      <div class="card card-small" (click)="selection.value = 'logon'" tabindex="0">
+          <a routerLink ="/Profile" routerLinkActive ="active">Log på Profil</a>
+       </div>
 
-    </div>
-
-    <div class="card card-small" (click)="selection.value = 'pwa'" tabindex="0">
-        <svg class="material-icons" xmlns="" width="56" height="56" viewBox="0 0 24 24"></svg>
-        <a routerLink ="/Profil" routerLinkActive ="active">Log på Profil</a>
-     </div>
-
-    <div class="card card-small" (click)="selection.value = 'dependency'" tabindex="0">
-      <svg class="material-icons" xmlns="" width="56" height="56" viewBox="0 0 24 24"></svg>
-      <a routerLink ="/contact" routerLinkActive ="active">Kontakt</a>
-    </div>
-
-</div>
-
-
+      <div class="card card-small" (click)="selection.value = 'kontakt'" tabindex="0">
+        <a routerLink ="/Info" routerLinkActive ="active">Kontakt</a>
+      </div>
+  </div>
+</nav>
 <router-outlet></router-outlet>
+
