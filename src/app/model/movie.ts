@@ -1,9 +1,9 @@
 export class movie
 {
   MovieId: any;
-  Tittle: any;
-  Description: any;
-  ReleaseDateTime: Date;
+  Tittle: string;
+  Description: string;
+  ReleaseDateTime: any;
   Runtime: string;
   Rating: string;
   MainActors: string;

@@ -74,6 +74,7 @@
     text-decoration: none;
   }
 
+
 </style>
 <!-- kald -->
 <!-- <app-genre></app-genre>
@@ -109,7 +110,12 @@
       <div class="card card-small" (click)="selection.value = 'kontakt'" tabindex="0">
         <a routerLink ="/Info" routerLinkActive ="active">Kontakt</a>
       </div>
+      <div class="card card-small" (click)="selection.value = 'voresfilm'" tabindex="0">
+        <a routerLink ="/Poster" routerLinkActive ="active">vores film</a>
+      </div>
   </div>
 </nav>
+
+
 <router-outlet></router-outlet>
 

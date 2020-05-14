@@ -11,6 +11,8 @@ export class GenreComponent implements OnInit {
 //holder data
 genres: Genre[];
 
+
+
   constructor(private service: HttpService) { }
 
   ngOnInit(): void {
