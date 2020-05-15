@@ -30,6 +30,7 @@ export class MoviesComponent implements OnInit {
 
 
   constructor(private service: HttpService) { }
+  // dependcie injection
   moviedropdown;
 
   moviedata:Array<movie>=[this.moviedropdown]
@@ -38,7 +39,7 @@ export class MoviesComponent implements OnInit {
   ngOnInit(): void {
 
   this.service.getMovie().subscribe(arg => this.movie = arg);console.log(this.movie);
-  
+
   this.service.getgenre().subscribe(arg => { this.genres = arg; console.log(this.genres);
   });
 
@@ -88,6 +89,14 @@ export class MoviesComponent implements OnInit {
       this.service.postMovie(movietoadd).subscribe(
         (movietoadded) => {this.movie.push(movietoadded)}
       );
+    }
+
+    deleteMovie(movietodelete: number)
+    {
+      console.log(movietodelete);
+      this.movie=this.movie.filter(movieobj=>movieobj.movieId!==movietodelete);
+      this.service.deleteMovie(movietodelete).subscribe();
+      alert("slettet");
     }
 
     //put/update

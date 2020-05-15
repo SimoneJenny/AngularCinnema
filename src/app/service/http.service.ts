@@ -30,14 +30,10 @@ export class HttpService {
   postMovie(movietoadd: any): Observable<movie>{
     return this.http.post<movie>(`${this.urlstart}Movies`, movietoadd, httpoptions);
   }
-  
-   //delete
-  //  deleteMovie(movietodelete: number){
-  //   return this.http.delete<movie>(`${this.urlstart}Movies /${movietodelete}´,);
 
+   //delete
+   deleteMovie(movietodelete: number):Observable<movie>{{
+    return this.http.delete<movie>(`${this.urlstart}Movies/${movietodelete}`, httpoptions);
+    // http://localhost:44324/api/movies/1
+  }}
   }
-/**
- *DI use lamp
- *URL
- *method for get/put
- */
