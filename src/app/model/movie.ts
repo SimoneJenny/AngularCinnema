@@ -1,13 +1,12 @@
 export class movie
 {
-  MovieId: any;
-  Tittle: string;
-  Description: string;
-  ReleaseDateTime: any;
-  Runtime: string;
-  Rating: string;
-  MainActors: string;
-  Theater: string;
-  Genrenumber: any;
-
+  movieId: any;
+  tittle: string;
+  description: string;
+  releaseDateTime: any;
+  runtime: string;
+  rating: string;
+  mainActors: string;
+  theater: string;
+  genrenumber: any;
 }

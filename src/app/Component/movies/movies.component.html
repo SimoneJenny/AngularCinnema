@@ -3,46 +3,17 @@
   <label>Dato</label><br>
   <input type="date">
   <br><br>
-  <!-- <label>Titel</label><br>
-  <input type="tittel"> -->
-  <!-- <label>Film</label><br> -->
-  <!-- <select (ngSubmit)="getMovie()">
-    <option value="1">Supermand</option>
-    <option value="2">OP</option>
-    <option value="3">Frozen2</option>
-    <option value="4">Topgun2</option>
-    <option value="5">The bouý</option>
-    <option value="6">Bad Boys</option>
-    <option value="7">Mit liv som rigmand</option>
-    <option value="8">The boy 2</option>
-    <option value="9">The Gentlemen</option>
-    <option value="10">Jeussic World</option>
-  </select><br> -->
-  <label>vælg Genre</label><br>
-  <select id="Genre" name= "dropdown">
-    <option value="Gyser">Gyser</option>
-    <option value="Komedie">Komedie</option>
-    <option value="Romatisk">Romatisk</option>
-    <option value="Thriller">Thriller</option>
-    <option value="Children">Children</option>
-    <option value="Dokumentar">Dokumentar</option>
-    <option value="Anime">Anime</option>
+  <label for="Genrenumber">Genre:  </label><br>
+  <select [(ngModel)]="moviegenre" name="temp" multiple>
+    <option *ngFor="let genreobj of genres" [value]="genreobj.genreId">{{genreobj.genres}}</option>
   </select>
   <br>
-  <label>Film</label><br>
-  <select [(ngModel)]="moviedropdown" name= "dropdown" (change)="selected()">
-    <option *ngFor="let item of moviedata" [ngValue]=item ><br>{{item.Tittle}}>
+  <label for= "movies">Film</label><br>
+  <select [(ngModel)]="moviegenre" name= "movies">
+    <option *ngFor="let item of movie" [ngValue]=item >{{item.tittle}}</option>
   </select>
   <br><br>
-  {{moviedropdown |json}}
-  <!-- udskriver -->
-  <br>
-  <br>
-  <button type="submit">
-    Find Film
-    <div></div>
-  </button>
-  <br>
+  {{moviegenre |json}}
   <br>
   <br>
 </form>
@@ -51,7 +22,7 @@
 <form (ngsubmit)="postMovie()">
   <h1>Tilføj film i Biografen</h1>
   <br>
-  <label for="Tittle"> Title<br></label><input type="text" name="Tittle" [(ngModel)]="Tittle" placeholder="add Tittle">
+  <label for="Tittle"> Title<br></label><input type="text" name="Tittle" [(ngModel)]="Tittle" placeholder="Add Tittle">
   <br>
   <label for="Description">Description:<br></label><input type="text" name="Description" [(ngModel)]="Description" placeholder="Add Description"><br>
   <label for="ReleaseDateTime">ReleaseDateTime: <br></label><input type="text" name="ReleaseDateTime" [(ngModel)]="ReleaseDateTime" placeholder="Add ReleaseDateTime"><br>
@@ -60,37 +31,39 @@
   <label for="MainActors">MainActors: <br> </label><input type="text" name="MainActors"[(ngModel)]="MainActors" placeholder="add MainActors"><br>
   <label for="Theater">Theater: <br></label><input type="text" name="Theater"[(ngModel)]="Theater" placeholder="Add Theater"><br>
   <label for="Genrenumber">Genre:  </label><br>
-  <!-- <select [(ngModel)]="moviegenre" name="moviegenre" multiple>
-    <option *ngFor="let genreobj of genres" [value]="genreobj">{{genreobj.Genres}}</option>
-  </select> -->
-  <select id="Genre">
-    <option value="Gyser">Gyser</option>
-    <option value="Komedie">Komedie</option>
-    <option value="Romatisk">Romatisk</option>
-    <option value="Thriller">Thriller</option>
-    <option value="Children">Children</option>
-    <option value="Dokumentar">Dokumentar</option>
-    <option value="Anime">Anime</option>
-  </select>
-  <br><br>
-  <button (click) = "postMovie()">
-    Post film
-  </button>
+  <select [(ngModel)]="moviegenre" name="temp" multiple>
+    <option *ngFor="let genreobj of genres" [value]="genreobj.genreId">{{genreobj.genres}}</option>
+  </select><br>
+  <button (click)="postMovie()"> post</button>
 </form>
 
-  <p id="demo"></p>
-<!-- smider alle movies ud -->
-  <!-- <div *ngFor ="let item of movie">
-    <p>MovieId {{item.MovieId}} | Moviename: {{item.Tittle}} |Movie Description: {{item.Description}}
-      |Movie theater: {{item.Theater}} |Movie Rating: {{item.Rating}}|Movie mainactors: {{item.MainActors}}
-      |Movie runtime: {{item.Runtime}}|Movie genreNR: {{item.Genrenumber}}</p>
-    </div> -->
 
+<!-- delete movie
+<form (ngsubmit)="deleteMovie()">
+  <h1>Slet film i Biografen</h1>
+  <br>
+  <label for="Tittle"> Title<br></label><input type="text" name="Tittle" [(ngModel)]="Tittle" placeholder="Add Tittle">
+  <br>
+  <label for="Description">Description:<br></label><input type="text" name="Description" [(ngModel)]="Description" placeholder="Add Description"><br>
+  <label for="ReleaseDateTime">ReleaseDateTime: <br></label><input type="text" name="ReleaseDateTime" [(ngModel)]="ReleaseDateTime" placeholder="Add ReleaseDateTime"><br>
+  <label for="Runtimeto">Runtime: <br> </label><input type="text" name="Runtime" [(ngModel)]="Runtime" placeholder="Add Runtime"><br>
+  <label for="Rating">Rating:  <br></label><input type="text" name="Rating" [(ngModel)]="Rating" placeholder="Add Rating"><br>
+  <label for="MainActors">MainActors: <br> </label><input type="text" name="MainActors"[(ngModel)]="MainActors" placeholder="add MainActors"><br>
+  <label for="Theater">Theater: <br></label><input type="text" name="Theater"[(ngModel)]="Theater" placeholder="Add Theater"><br>
+  <label for="Genrenumber">Genre:  </label><br>
+  <select [(ngModel)]="moviegenre" name="temp" multiple>
+    <option *ngFor="let genreobj of genres" [value]="genreobj.genreId">{{genreobj.genres}}</option>
+  </select><br>
+  <button (click)="postMovie()"> post</button>
+</form> -->
+
+  <p id="demo"></p>
 <script>
    function getDate() {
       var x = document.getElementById("myDate").value;
       document.getElementById("demo").innerHTML = x;}
 </script>
+
 <style>
   .dropdown {
   position: relative;

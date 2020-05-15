@@ -23,15 +23,19 @@ export class HttpService {
   getgenre(): Observable<Genre[]>{
     return this.http.get<Genre[]>(`${this.urlstart}genres`);
   }
+
   getMovie(): Observable<movie[]>{ //all movies
     return this.http.get<movie[]>(`${this.urlstart}Movies`);
   }
   postMovie(movietoadd: any): Observable<movie>{
     return this.http.post<movie>(`${this.urlstart}Movies`, movietoadd, httpoptions);
+  }
+  
+   //delete
+  //  deleteMovie(movietodelete: number){
+  //   return this.http.delete<movie>(`${this.urlstart}Movies /${movietodelete}´,);
 
   }
-
-}
 /**
  *DI use lamp
  *URL

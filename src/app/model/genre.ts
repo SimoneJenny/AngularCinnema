@@ -1,5 +1,5 @@
 export class Genre
 {
-  GenreId: any;
-  Genres: any;
+  genreId: any;
+  genres: any;
 }
