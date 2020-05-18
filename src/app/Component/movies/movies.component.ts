@@ -111,5 +111,6 @@ export class MoviesComponent implements OnInit {
     putMovie(){
 
     }
+   
 
 }

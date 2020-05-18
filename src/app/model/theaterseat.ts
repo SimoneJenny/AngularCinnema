@@ -1,4 +1,5 @@
-export class tseats{}
+export class tseats{
 seat: Number;
 row: Number;
+}
 

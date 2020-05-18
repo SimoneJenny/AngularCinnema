@@ -18,7 +18,9 @@ const routes : Routes =[
   {path : 'Profile', component: UserProfileComponent}, //skal matche
   {path : 'Info', component: ContactComponent}, //skal matche
   {path : 'Poster', component: PosterComponent},
-  {path : 'seat', component: TheaterComponent},
+  {path : 'seat', component: TheaterComponent}
+  //booking
+  // {path : 'seat/:movieId', component: TheaterComponent}, //booking
 ]
 @NgModule({
   declarations: [ //components, directives, pipes

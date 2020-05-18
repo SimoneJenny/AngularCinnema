@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
+import { EventEmitter } from 'protractor';
 
 @Component({
   selector: 'app-theater',
@@ -9,6 +10,9 @@ export class TheaterComponent {
 showMessage:string= "Du har valgt film og booket disse sæder:";
   constructor() { }
 
+ @Input()
+ @Output()
+
   // ngOnInit(): void {
   // }
 onNotifyClicked(message:string): void{
@@ -16,3 +20,4 @@ this.showMessage=message;
 
 }
 }
+
