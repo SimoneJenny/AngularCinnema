@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input, Output, EventEmitter } from '@angular/core';
 import { movie } from 'src/app/model/movie';
 import { HttpService } from 'src/app/service/http.service';
 import { Genre } from 'src/app/model/genre';
 import { Observable } from 'rxjs';
-
+import { tseats } from 'src/app/model/theaterseat';
 
 @Component({
   selector: 'app-movies',
@@ -11,6 +11,14 @@ import { Observable } from 'rxjs';
   styleUrls: ['./movies.component.css']
 })
 export class MoviesComponent implements OnInit {
+  @Input()
+  @Output()notify: EventEmitter<string> = new EventEmitter<string>();
+  onClick(test: movie): void{
+  console.log(test);
+  return;
+  this.notify.emit("message from theater")
+}
+
   MovieId: any;
   Tittle: any;
   Description: string;
@@ -27,7 +35,7 @@ export class MoviesComponent implements OnInit {
   moviegenrem: any[];
   movie: movie[] =[];
   genres: Genre[]=[];
-
+  Tseat: tseats[];
 
   constructor(private service: HttpService) { }
   // dependcie injection

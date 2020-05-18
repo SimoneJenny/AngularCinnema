@@ -13,9 +13,14 @@
     <option *ngFor="let item of movie" [ngValue]=item >{{item.tittle}}</option>
   </select>
   <br><br>
-  {{moviegenre |json}}
+  <!-- {{moviegenre |json}} -->
+  <br><br>
   <br>
-  <br>
+  <div class="container" (click)="onClick($event)">
+    <button class="btn-info"> <a routerLink ="/seat" routerLinkActive ="active">Book sæder</a>
+      {{moviegenre |json}}
+    </button>
+  </div>
 </form>
 
 <!-- Post movie -->
@@ -103,11 +108,4 @@
   movieId:   {{movieobj.movieId}} | MovieTittle:  {{movieobj.tittle}}| MovieDescription:  {{movieobj.description}}| MovieDescription: {{movieobj.runtime}}
   <br><button (click)="deleteMovie(movieobj.movieId)">Delete</button>
 </div> -->
-<br><br><br>
-<!-- <div class="dropdown">
-  <img src="https://www.dolphinleadcomseating.com/wp-content/uploads/2018/06/Koge-cinema-Danmark.jpg" alt="cinnema" width="100" height="50">
-  <div class="dropdown-content">
-  <img src="https://www.dolphinleadcomseating.com/wp-content/uploads/2018/06/Koge-cinema-Danmark.jpg" alt="cinnema" width="300" height="400">
-  <div class="desc">our room</div>
-  </div>
-</div> -->
+

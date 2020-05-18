@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-theater',
   templateUrl: './theater.component.html',
   styleUrls: ['./theater.component.css']
 })
-export class TheaterComponent implements OnInit {
-
+export class TheaterComponent {
+showMessage:string= "Du har valgt film og booket disse sæder:";
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  // ngOnInit(): void {
+  // }
+onNotifyClicked(message:string): void{
+this.showMessage=message;
 
+}
 }
