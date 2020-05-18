@@ -7,7 +7,7 @@ import { EventEmitter } from 'protractor';
   styleUrls: ['./theater.component.css']
 })
 export class TheaterComponent {
-showMessage:string= "Du har valgt film og booket disse sæder:";
+showMessage:string= "Du har valgt filmen {{}}og booket disse sæder {{}}:";
   constructor() { }
 
  @Input()

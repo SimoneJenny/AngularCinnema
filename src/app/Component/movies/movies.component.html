@@ -13,7 +13,7 @@
     <option *ngFor="let item of movie" [ngValue]=item >{{item.tittle}}</option>
   </select>
   <br><br>
-  <div class="card card-small" (click)="selection.value = 'Vores Sæder'" tabindex="0">
+  <div class="container" (click)="onClick($event)">
     <a routerLink ="/seat" routerLinkActive ="active">Book sæder</a>
   </div>
   {{moviegenre |json}}
