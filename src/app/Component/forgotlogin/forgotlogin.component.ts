@@ -12,4 +12,13 @@ export class ForgotloginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
 }
+
+// getnewpassword()
+//   {
+//     console.log(this.movie)
+//     // return;
+//     this.service.getnewpassword(this.movie2.movieId, this.movie2).subscribe(
+//     )
+//   }

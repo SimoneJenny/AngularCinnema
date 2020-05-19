@@ -44,5 +44,12 @@ export class HttpService {
   searchMovie(movietoseach:string):Observable<movie>{{
       return this.http.get<movie>(`${this.urlstart}Movies/search?tittle=${movietoseach}`, httpoptions);
   }}
+
+
+//   getnewpassword(newpassword:string):Observable<Users>{{
+//     return this.http.get<movie>(`${this.urlstart}Users/${newpassword}`, httpoptions);
+// }}
+
+
 }
 
