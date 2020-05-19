@@ -22,7 +22,8 @@ export class AdminMovieComponent implements OnInit {
 
   temp: any[];
   tempmovie: any[];
-  movie: movie;
+  movie: movie[];
+  movie2: movie;
   moviegenre: any[];
   moviegenrem: any[];
   genres: Genre[]=[];
@@ -32,18 +33,18 @@ export class AdminMovieComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.movie = new movie(); //this.movie er et obj og vi instansiere til den klase Movie
+    this.movie2 = new movie(); //this.movie er et obj og vi instansiere til den klase Movie
 
-    // this.service.getMovie().subscribe(arg => this.movie = arg);console.log(this.movie);
+    this.service.getMovie().subscribe(arg => this.movie = arg);console.log(this.movie);
 
-    // this.service.getgenre().subscribe(arg => { this.genres = arg; console.log(this.genres)});
+    this.service.getgenre().subscribe(arg => { this.genres = arg; console.log(this.genres)});
   }
 
 //søg film
 searchMovie(){
   //this function should parse movieId to service and return to object
   this.service.searchMovie("Frozen").subscribe(
-    (moviefromApi)=> {this.movie = moviefromApi
+    (moviefromApi)=> {this.movie2 = moviefromApi
     // dette er en function
     console.log(this.movie);
     }
@@ -85,13 +86,13 @@ searchMovie(){
   {
     console.log(this.movie)
     // return;
-    this.service.updateMovie(this.movie.movieId, this.movie).subscribe(
+    this.service.updateMovie(this.movie2.movieId, this.movie2).subscribe(
     )
   }
   searchMovies(){
-    this.service.searchMovie("tite").subscribe(
+    this.service.searchMovie("mugge og vejfesten").subscribe(
       (moviefromapi)=>{
-        this.movie=moviefromapi
+        this.movie2=moviefromapi
         console.log(this.movie);
     }
     )
