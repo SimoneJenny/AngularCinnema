@@ -1,4 +1,4 @@
-<form action="/Film1">
+<form action="/Film1" class="getmovie">
   <h1>Find film</h1>
   <label>Dato</label><br>
   <input type="date">
@@ -11,18 +11,34 @@
   <label for= "movies">Film</label><br>
   <select [(ngModel)]="moviegenre" name= "movies">
     <option *ngFor="let item of movie" [ngValue]=item >{{item.tittle}}</option>
+
   </select>
   <br><br>
-  <div class="container" (click)="onClick($event)">
-    <a routerLink ="/seat" routerLinkActive ="active">Book sæder</a>
-  </div>
+  <p>mere info om filmen</p>
   {{moviegenre |json}}
+  <br><br><br>
+  <p>For at vælge en film, tryk på order knappen for at bestille</p>
+  <br><br>
+  <div *ngFor="let movieobj of movie">
+    <br><button (click)="orderfrommovie(movieobj)">Order item</button><br>
+    movieId:   {{movieobj.movieId}}<br>
+    MovieTittle:  {{movieobj.tittle}}
+  </div>
+  <!-- <div class="container" (click)="onClick($event)">
+    <a routerLink ="/seat" routerLinkActive ="active">Book sæder</a>
+  </div> -->
+
   <br>
   <br>
 </form>
 
+<!-- <div *ngFor="let movieobj of movie">
+  <br><button (click)="orderfrommovie(movieobj)">Order seats</button>
+  movieId:   {{movieobj.movieId}} | MovieTittle:  {{movieobj.tittle}}| MovieDescription:  {{movieobj.description}}| MovieDescription: {{movieobj.runtime}}
+</div> -->
+
 <!-- Post movie -->
-<form (ngsubmit)="postMovie()">
+<!-- <form (ngsubmit)="postMovie()">
   <h1>Tilføj film i Biografen</h1>
   <br>
   <label for="Tittle"> Title<br></label><input type="text" name="Tittle" [(ngModel)]="Tittle" placeholder="Add Tittle">
@@ -40,10 +56,10 @@
   <button (click)="postMovie()"> post</button>
 </form>
 <br>
-  <br>
+  <br> -->
 
 <!-- delete -->
-<form class="designdb">
+<!-- <form class="designdb">
 <h1>Slet film</h1>
 <div *ngFor="let movieobj of movie">
   <label for=movieId>Movieid: {{movieobj.movieId}} </label><br>
@@ -55,9 +71,9 @@
   <br>
 </div>
 <br>
-</form>
+</form> -->
 
-  <!-- dato -->
+<!-- dato -->
   <p id="demo"></p>
 <script>
    function getDate() {
@@ -87,17 +103,19 @@
   text-align: center;
 }
 
-.designdb{
+.getmovie{
   background:gray;
   padding: 5px;
   display: inline-block;
 }
-.designdb li{
+.getmovie li{
   background: #ffe5e5;
   padding: 3px;
   margin-left: 10px;
   border-color: blue;
   }
+
+
 </style>
 
 <!-- <h1>Delete</h1>
@@ -106,11 +124,10 @@
   movieId:   {{movieobj.movieId}} | MovieTittle:  {{movieobj.tittle}}| MovieDescription:  {{movieobj.description}}| MovieDescription: {{movieobj.runtime}}
   <br><button (click)="deleteMovie(movieobj.movieId)">Delete</button>
 </div> -->
-<br><br><br>
-<!-- <div class="dropdown">
-  <img src="https://www.dolphinleadcomseating.com/wp-content/uploads/2018/06/Koge-cinema-Danmark.jpg" alt="cinnema" width="100" height="50">
-  <div class="dropdown-content">
-  <img src="https://www.dolphinleadcomseating.com/wp-content/uploads/2018/06/Koge-cinema-Danmark.jpg" alt="cinnema" width="300" height="400">
-  <div class="desc">our room</div>
-  </div>
+
+<!-- forløkke der genrere alle obj -->
+<!-- <div *ngFor="let movieobj of movie">
+  <br><button (click)="orderfrommovie(movieobj)">Order seats</button>
+  movieId:   {{movieobj.movieId}} | MovieTittle:  {{movieobj.tittle}}| MovieDescription:  {{movieobj.description}}| MovieDescription: {{movieobj.runtime}}
 </div> -->
+

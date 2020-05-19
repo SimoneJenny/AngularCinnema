@@ -1,5 +1,6 @@
 export class movie
 {
+  [x: string]: any;
   movieId: any;
   tittle: string;
   description: string;

@@ -34,4 +34,15 @@ export class HttpService {
    deleteMovie(movietodelete: number):Observable<movie>{{
     return this.http.delete<movie>(`${this.urlstart}Movies/${movietodelete}`, httpoptions);
   }}
-  }
+
+  // update
+  updateMovie(movieidHTML: number, updateMovie:movie):Observable<movie>{{
+      return this.http.put<movie>(`${this.urlstart}Movies/${movieidHTML}`,updateMovie, httpoptions);
+  }}
+
+  //search movieeithTitle
+  searchMovie(movietoseach:string):Observable<movie>{{
+      return this.http.get<movie>(`${this.urlstart}Movies/search?tittle=${movietoseach}`, httpoptions);
+  }}
+}
+

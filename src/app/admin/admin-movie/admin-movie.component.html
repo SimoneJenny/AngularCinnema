@@ -1,0 +1,94 @@
+<p>Her kan den Aministerende redigere i film</p>
+
+<style>
+  .dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+.designdb{
+  background:gray;
+  padding: 5px;
+  display: inline-block;
+}
+.designdb li{
+  background: #ffe5e5;
+  padding: 3px;
+  margin-left: 10px;
+  border-color: blue;
+  }
+
+</style>
+
+
+<!-- delete -->
+<!-- <form class="designdb">
+  <h1>Slet film</h1>
+  <div *ngFor="let movieobj of movie">
+    <label for=movieId>Movieid: {{movieobj.movieId}} </label><br>
+    <label for=Titel>Title: {{movieobj.tittle}} </label><br>
+    <label for=Description>Description: {{movieobj.description}} </label><br>
+    <label for=Runtime>Runtime: {{movieobj.runtime}} </label>
+    <br>
+    <button (click)="deleteMovie(movieobj.movieId)" >Slet film</button>
+    <br>
+  </div>
+  <br>
+  </form> -->
+
+ <!-- oprette -->
+
+<!-- <form (ngsubmit)="postMovie()" class = "designdbpost">
+  <h1>Tilføj film i Biografen</h1>
+  <br>
+  <label for="Tittle"> Title<br></label><input type="text" name="Tittle" [(ngModel)]="Tittle" placeholder="Add Tittle">
+  <br>
+  <label for="Description">Description:<br></label><input type="text" name="Description" [(ngModel)]="Description" placeholder="Add Description"><br>
+  <label for="ReleaseDateTime">ReleaseDateTime: <br></label><input type="text" name="ReleaseDateTime" [(ngModel)]="ReleaseDateTime" placeholder="Add ReleaseDateTime"><br>
+  <label for="Runtimeto">Runtime: <br> </label><input type="text" name="Runtime" [(ngModel)]="Runtime" placeholder="Add Runtime"><br>
+  <label for="Rating">Rating:  <br></label><input type="text" name="Rating" [(ngModel)]="Rating" placeholder="Add Rating"><br>
+  <label for="MainActors">MainActors: <br> </label><input type="text" name="MainActors"[(ngModel)]="MainActors" placeholder="add MainActors"><br>
+  <label for="Theater">Theater: <br></label><input type="text" name="Theater"[(ngModel)]="Theater" placeholder="Add Theater"><br>
+  <label for="Genrenumber">Genre:  </label><br>
+  <select [(ngModel)]="moviegenre" name="temp" multiple>
+    <option *ngFor="let genreobj of genres" [value]="genreobj.genreId">{{genreobj.genres}}</option>
+  </select><br>
+  <br><button (click)="postMovie()">Tilføj film</button>
+</form>
+<br><br> -->
+
+<!-- select  -->
+
+
+<!-- update -->
+<form (ngsubmit)="UpdateMovie()" class ="designdbupdate">
+  <h1>Opdater en film i Biografen</h1>
+  <br>
+  <label for="Tittle"> Title<br></label><input type="text" name="Tittle" [(ngModel)]="Tittle">
+  <br>
+  <label for="Description">Description:<br></label><input type="text" name="Description" [(ngModel)]="Description" ><br>
+  <label for="ReleaseDateTime">ReleaseDateTime: <br></label><input type="text" name="ReleaseDateTime" [(ngModel)]="ReleaseDateTime"><br>
+  <label for="Runtimeto">Runtime: <br> </label><input type="text" name="Runtime" [(ngModel)]="Runtime" ><br>
+  <label for="Rating">Rating:  <br></label><input type="text" name="Rating" [(ngModel)]="Rating" ><br>
+  <label for="MainActors">MainActors: <br> </label><input type="text" name="MainActors"[(ngModel)]="MainActors" ><br>
+  <label for="Theater">Theater: <br></label><input type="text" name="Theater"[(ngModel)]="Theater"><br>
+  <br><button (click)="searchMovies()">Hent film</button><br>
+  <br><button (click)="UpdateMovie()">Opdater film</button>
+</form>
+<br><br>

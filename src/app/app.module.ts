@@ -11,14 +11,20 @@ import { TheaterComponent } from './Component/theater/theater.component';
 import { Routes, Router, RouterModule } from '@angular/router';
 import { ContactComponent } from './component/contact/contact.component';
 import {HttpClientModule} from '@angular/common/http';
-import { PosterComponent } from './component/poster/poster.component'; //app get, set'
+import { PosterComponent } from './component/poster/poster.component';
+import { AdminMovieComponent } from './admin/admin-movie/admin-movie.component';
+import { ForgotloginComponent } from './component/forgotlogin/forgotlogin.component'; //app get, set'
 
 const routes : Routes =[
   {path : 'Movies', component: MoviesComponent}, //skal matche
+  {path : 'Show', component: TheaterComponent},
   {path : 'Profile', component: UserProfileComponent}, //skal matche
   {path : 'Info', component: ContactComponent}, //skal matche
   {path : 'Poster', component: PosterComponent},
-  {path : 'seat', component: TheaterComponent}
+  {path : 'seat', component: TheaterComponent},
+  {path : 'Admin', component: AdminMovieComponent},
+  {path : 'Fpassword', component: ForgotloginComponent},
+
   //booking
   // {path : 'seat/:movieId', component: TheaterComponent}, //booking
 ]
@@ -30,7 +36,9 @@ const routes : Routes =[
     GenreComponent,
     TheaterComponent,
     ContactComponent,
-    PosterComponent
+    PosterComponent,
+    AdminMovieComponent,
+    ForgotloginComponent
   ],
   imports: [ //modules
     BrowserModule,

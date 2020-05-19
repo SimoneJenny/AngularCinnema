@@ -4,6 +4,7 @@ import { HttpService } from 'src/app/service/http.service';
 import { Genre } from 'src/app/model/genre';
 import { Observable } from 'rxjs';
 import { tseats } from 'src/app/model/theaterseat';
+import { Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-movies',
@@ -18,7 +19,6 @@ export class MoviesComponent implements OnInit {
   return;
   this.notify.emit("message from theater")
 }
-
   MovieId: any;
   Tittle: any;
   Description: string;
@@ -37,11 +37,11 @@ export class MoviesComponent implements OnInit {
   genres: Genre[]=[];
   Tseat: tseats[];
 
-  constructor(private service: HttpService) { }
+  constructor(private service: HttpService, private router: Router) { }
   // dependcie injection
-  moviedropdown;
+  // moviedropdown;
 
-  moviedata:Array<movie>=[this.moviedropdown]
+  // moviedata:Array<movie>=[this.moviedropdown]
 
 
   ngOnInit(): void {
@@ -66,51 +66,58 @@ export class MoviesComponent implements OnInit {
         Theater: this.Theater,
         Genrenumber: this.Genrenumber,
         moviegenre: this.tempmovie
-
       }
-
     }
 
-    //post/add
-    postMovie(){
-      console.log(this.temp)
-      // return;
-      alert("tilføjet");
+    // post/add
+    // postMovie(){
+    //   console.log(this.temp)
+    //   // return;
+    //   alert("tilføjet");
 
-      //  let gArray: any = [
-      //    {
-      //    "genreId":1
-      //    }
-      // ];
-      const movietoadd={
-        Tittle: this.Tittle,
-        Description: this.Description,
-        ReleaseDateTime: this.ReleaseDateTime,
-        Runtime: this.Runtime,
-        Rating: this.Rating,
-        MainActors: this.MainActors,
-        Theater: this.Theater,
-        Genrenumber: this.Genrenumber,
-        moviegenre: this.temp
+    //   const movietoadd={
+    //     Tittle: this.Tittle,
+    //     Description: this.Description,
+    //     ReleaseDateTime: this.ReleaseDateTime,
+    //     Runtime: this.Runtime,
+    //     Rating: this.Rating,
+    //     MainActors: this.MainActors,
+    //     Theater: this.Theater,
+    //     Genrenumber: this.Genrenumber,
+    //     moviegenre: this.temp
 
-      }
-      this.service.postMovie(movietoadd).subscribe(
-        (movietoadded) => {this.movie.push(movietoadded)}
-      );
-    }
+    //   }
+    //   this.service.postMovie(movietoadd).subscribe(
+    //     (movietoadded) => {this.movie.push(movietoadded)}
+    //   );
+    // }
 
-    deleteMovie(movietodelete: number)
-    {
-      console.log(movietodelete);
-      this.movie=this.movie.filter(movieobj=>movieobj.movieId!==movietodelete);
-      this.service.deleteMovie(movietodelete).subscribe();
-      alert("slettet");
-    }
+    // deleteMovie(movietodelete: number)
+    // {
+    //   console.log(movietodelete);
+    //   this.movie=this.movie.filter(movieobj=>movieobj.movieId!==movietodelete);
+    //   this.service.deleteMovie(movietodelete).subscribe();
+    //   alert("slettet");
+    // }
 
-    //put/update
-    putMovie(){
+    // putmovie(){
 
-    }
-   
+    // }
+
+    orderfrommovie(movieobjtoshow:movie){
+      console.log(movieobjtoshow);
+      let navigationtonewpage: NavigationExtras={
+        queryParams:{
+          // variable
+          "dataMovie": JSON.stringify(movieobjtoshow)
+          // skal matche inde i theater
+        }
+      };
+      this.router.navigate(["Show"], navigationtonewpage)
+    }//end
+
+
+
+
 
 }
