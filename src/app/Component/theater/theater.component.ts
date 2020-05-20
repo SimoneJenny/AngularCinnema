@@ -11,27 +11,72 @@ import { JsonPipe } from '@angular/common';
   styleUrls: ['./theater.component.css']
 })
 export class TheaterComponent {
-showMessage:string= "Du har valgt filmen {{}}og booket disse sæder {{}}:";
   constructor(private route:ActivatedRoute) { }
+  Booked : boolean = true;
+  biografseats: Number[][] =
+  [
+    [1,0,0,0,0,0],
+    [0,0,0,0,0,0],
+    [0,0,1,1,0,0],
+    [0,0,0,0,0,0],
+    [0,0,0,0,0,0],
+    [1,0,0,1,0,0]
+  ];
+
+selectseats: number=0;
 
  @Input()
  @Output()
 movie:movie;
+
   ngOnInit(): void {
     this.route.queryParams.subscribe(
       (params)=>{this.movie=JSON.parse(params["dataMovie"])
     }
     )
   }
+  selectseat(r: number ,s:number)
+  {
+    console.log(r+ "," + s)
+    if(this.biografseats[r][s] == 0)
+    {
+      this.biografseats[r][s] = 2;
+      this.selectseats++
+      return;
+    }
+    if(this.biografseats[r][s] == 2)
+    {
+      this.biografseats[r][s] = 0;
+      this.selectseats--
+      return;
+    }
+  }
+  
+  classSelector(r:number,s:number){
+    switch(this.biografseats[r][s])
+    {
+        case 1:
+        {
+          return "seatTaken"
+        }
+        case 2:
+        {
+          return "seatSelected"
+        }
+        // default
+        default:
+        {
+          return "seatavalible"
+        }
+    }
+
+  }
     // Json.parse er en converter
     // route vi det object vi går ind i og det gør vi kan få fat i vores route i url
   }
-// onNotifyClicked(message:string): void{
-// this.showMessage=message;
 
-// }
-// }
-// bookedseat(event: any{
-//   event.target.disabled = true;
-// })
+
+
+
+
 

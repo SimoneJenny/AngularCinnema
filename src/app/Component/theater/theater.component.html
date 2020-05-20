@@ -22,11 +22,17 @@
   cursor: pointer;
 }
 
-/* Style the class (and buttons on mouse-over) */
-.active, .btn:hover {
-  background-color:red;
-  color: white;
+
+.seatTaken{
+  background-color: red;
 }
+.seatSelected{
+  background-color: yellow;
+}
+.seatavalible{
+  background-color: green;
+}
+
 </style>
    <!-- <select [(ngModel)]="Tseat" name= "Tseat">
     <option *ngFor="let item of tseats" [ngValue]="item">{{item}}</option>
@@ -43,58 +49,24 @@
 <br><br><br>
 
 <p>Vælg de sæder du ønsker at booke</p>
-  <div id="Pick" multiple>
-  <img src="https://www.officesigncompany.com/images/products/detail/exit-door-sign.jpg" alt="1" width="30" height="15"><br>
-  <button id ="btn1"class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button class="btn" ><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <br>
-  <button class="btn" ><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <br>
+<p>du valgt: {{selectseats}} sæde(r)</p>
+<div style="clear: both; display:inline-block">
+  <!-- ramme for sæder -->
+  <div style ="display:block; clear: both;" *ngFor="let row of biografseats; let r=index">
+    <!-- række -->
+    <div [ngClass]="classSelector(r,s)" style ="float: left; padding: 3px; margin: 2px;" *ngFor="let seat of row; let s=index">
+    <!-- sæde -->
+    <button (click)="selectseat(r,s)" class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
+    </div>
+  </div>
+</div>
 
-  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <img src="https://www.officesigncompany.com/images/products/detail/exit-door-sign.jpg" alt="1" width="30" height="15">
-  <br>
-  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <br>
-  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <br>
-  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <br>
-  <img src="https://www.officesigncompany.com/images/products/detail/exit-door-sign.jpg" alt="1" width="30" height="15">
-  </div><br><br>
-
+<div style="clear: both; display:block; margin-top: 25px;">
   <label>Vælg tidspunkt:</label><br>
   <input type="date"><br><br>
   <br>
+</div>
+
 <!-- <label for="">plads: {{tseats.row}}</label><br>
 <label for="">række: {{tseats.}}</label><br> -->
 <br>
@@ -109,22 +81,5 @@
       var x = document.getElementById("myDate").value;
       document.getElementById("demo").innerHTML = x;
     }
-
 // sæder
-
-// Add class to the the button
-var count=1;
-var header = document.getElementById(Pick);
-var btns = header.getElementsByClassName(btn);
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function() {
-  var current = document.getElementsByClassName(" active");
-  if (current.length > 0) {
-    current[0].className = current[0].className.replace(" active", "");
-  }
-
-  this.className += " active";
-  });
-}
-
 </script>
