@@ -42,7 +42,7 @@ export class HttpService {
 
   //search movieeithTitle
   searchMovie(movietoseach:string):Observable<movie>{{
-      return this.http.get<movie>(`${this.urlstart}Movies/search?tittle=${movietoseach}`, httpoptions);
+      return this.http.get<movie>(`${this.urlstart}Movies/search/${movietoseach}`, httpoptions);
   }}
 
 

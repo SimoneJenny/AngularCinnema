@@ -31,4 +31,7 @@ movie:movie;
 
 // }
 // }
+// bookedseat(event: any{
+//   event.target.disabled = true;
+// })
 

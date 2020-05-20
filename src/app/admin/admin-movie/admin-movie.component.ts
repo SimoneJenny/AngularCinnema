@@ -90,10 +90,11 @@ searchMovie(){
     )
   }
   searchMovies(){
-    this.service.searchMovie("mugge og vejfesten").subscribe(
+    this.service.searchMovie(this.movie2.tittle).subscribe(
       (moviefromapi)=>{
         this.movie2=moviefromapi
-        console.log(this.movie);
+        console.log(this.movie2);
+        alert()
     }
     )
   }

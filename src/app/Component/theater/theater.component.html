@@ -12,10 +12,26 @@
     padding: 19px;
     text-align: center;
   }
-  </style>
+
+/* seat button */
+  .btn {
+  border: none;
+  outline: none;
+  padding: 5px 5px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+/* Style the class (and buttons on mouse-over) */
+.active, .btn:hover {
+  background-color:red;
+  color: white;
+}
+</style>
    <!-- <select [(ngModel)]="Tseat" name= "Tseat">
     <option *ngFor="let item of tseats" [ngValue]="item">{{item}}</option>
   </select>  -->
+
   <h1>Valgt Film:</h1><br>
 <br>
 <label for="">Titel: {{movie.tittle}}</label><br>
@@ -27,68 +43,83 @@
 <br><br><br>
 
 <p>Vælg de sæder du ønsker at booke</p>
-  <div  >
+  <div id="Pick" multiple>
   <img src="https://www.officesigncompany.com/images/products/detail/exit-door-sign.jpg" alt="1" width="30" height="15"><br>
-  <button><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
+  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
+  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
+  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
+  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
+  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
+  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
   <br>
-  <button><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
+  <button class="btn" ><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
+  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
+  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
+  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
+  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
+  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
   <br>
 
-  <button><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
+  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
+  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
+  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
+  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
+  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
+  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
   <img src="https://www.officesigncompany.com/images/products/detail/exit-door-sign.jpg" alt="1" width="30" height="15">
   <br>
-  <button><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
+  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
+  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
+  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
+  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
+  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
+  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
   <br>
-  <button><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
+  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
+  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
+  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
+  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
+  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
+  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
   <br>
-  <button><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
+  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
+  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
+  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
+  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
+  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
+  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
   <br>
   <img src="https://www.officesigncompany.com/images/products/detail/exit-door-sign.jpg" alt="1" width="30" height="15">
-  </div><br><br><br><br>
+  </div><br><br>
 
   <label>Vælg tidspunkt:</label><br>
   <input type="date"><br><br>
-
-  <h2>Sæder valgt:</h2>
   <br>
 <!-- <label for="">plads: {{tseats.row}}</label><br>
 <label for="">række: {{tseats.}}</label><br> -->
 <br>
-
-
+<button>Læg i kurv</button>
+  <br>
+<!-- dato -->
   <p id="demo"></p>
 <script>
    function getDate() {
       var x = document.getElementById("myDate").value;
-      document.getElementById("demo").innerHTML = x;}
+      document.getElementById("demo").innerHTML = x;
+    }
+
+// sæder
+
+// Add class to the the button
+var header = document.getElementById("Pick");
+var btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName(" active");
+  if (current.length > 0) {
+    current[0].className = current[0].className.replace(" active", "");
+  }
+  this.className += " active";
+  });
+}
 </script>

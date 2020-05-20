@@ -72,7 +72,6 @@
   <br><button (click)="postMovie()">Tilføj film</button>
 </form>
 <br><br>
-
 <!-- select  -->
 
 
@@ -80,15 +79,16 @@
 <form (ngsubmit)="UpdateMovie()" class ="designdbupdate">
   <h1>Opdater en film i Biografen</h1>
   <br>
-  <label for="Tittle"> Title<br></label><input type="text" name="Tittle" [(ngModel)]="Tittle">
+  <label for="Tittle"> Title<br></label><input type="text" name="Tittle" [(ngModel)]="movie2.tittle">
   <br>
-  <label for="Description">Description:<br></label><input type="text" name="Description" [(ngModel)]="Description" ><br>
-  <label for="ReleaseDateTime">ReleaseDateTime: <br></label><input type="text" name="ReleaseDateTime" [(ngModel)]="ReleaseDateTime"><br>
-  <label for="Runtimeto">Runtime: <br> </label><input type="text" name="Runtime" [(ngModel)]="Runtime" ><br>
-  <label for="Rating">Rating:  <br></label><input type="text" name="Rating" [(ngModel)]="Rating" ><br>
-  <label for="MainActors">MainActors: <br> </label><input type="text" name="MainActors"[(ngModel)]="MainActors" ><br>
-  <label for="Theater">Theater: <br></label><input type="text" name="Theater"[(ngModel)]="Theater"><br>
+  <label for="Description">Description:<br></label><input type="text" name="Description" [(ngModel)]="movie2.description" ><br>
+  <label for="ReleaseDateTime">ReleaseDateTime: <br></label><input type="text" name="ReleaseDateTime" [(ngModel)]="movie2.releaseDateTime"><br>
+  <label for="Runtimeto">Runtime: <br> </label><input type="text" name="Runtime" [(ngModel)]="movie2.runtime"><br>
+  <label for="Rating">Rating:  <br></label><input type="text" name="Rating" [(ngModel)]="movie2.rating" ><br>
+  <label for="MainActors">MainActors: <br> </label><input type="text" name="MainActors"[(ngModel)]="movie2.mainActors" ><br>
+  <label for="Theater">Theater: <br></label><input type="text" name="Theater"[(ngModel)]="movie2.theater"><br>
   <br><button (click)="searchMovies()">Hent film</button><br>
   <br><button (click)="UpdateMovie()">Opdater film</button>
+  
 </form>
 <br><br>
