@@ -51,7 +51,7 @@
 <p>Vælg de sæder du ønsker at booke</p>
 <p>du valgt: {{selectseats}} sæde(r)</p>
 <div style="clear: both; display:inline-block">
-  <!-- ramme for sæder -->
+  <!-- danner ramme for sæder -->
   <div style ="display:block; clear: both;" *ngFor="let row of biografseats; let r=index">
     <!-- række -->
     <div [ngClass]="classSelector(r,s)" style ="float: left; padding: 3px; margin: 2px;" *ngFor="let seat of row; let s=index">

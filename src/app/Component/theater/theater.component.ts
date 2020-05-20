@@ -22,7 +22,7 @@ export class TheaterComponent {
     [0,0,0,0,0,0],
     [1,0,0,1,0,0]
   ];
-
+// liste af en liste af numbers
 selectseats: number=0;
 
  @Input()
@@ -51,7 +51,8 @@ movie:movie;
       return;
     }
   }
-  
+  // her tjekker den for row og seat er booket eller ej
+
   classSelector(r:number,s:number){
     switch(this.biografseats[r][s])
     {
@@ -70,6 +71,7 @@ movie:movie;
         }
     }
 
+    //her laver vi en switch for alle case senarierne(seat avalible er i deafult)
   }
     // Json.parse er en converter
     // route vi det object vi går ind i og det gør vi kan få fat i vores route i url
