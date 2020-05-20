@@ -45,8 +45,8 @@
 <p>Vælg de sæder du ønsker at booke</p>
   <div id="Pick" multiple>
   <img src="https://www.officesigncompany.com/images/products/detail/exit-door-sign.jpg" alt="1" width="30" height="15"><br>
-  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-  <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
+  <button id ="btn1"class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
+  <button class="btn" ><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
   <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
   <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
   <button class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
@@ -100,6 +100,8 @@
 <br>
 <button>Læg i kurv</button>
   <br>
+
+
 <!-- dato -->
   <p id="demo"></p>
 <script>
@@ -111,15 +113,18 @@
 // sæder
 
 // Add class to the the button
-var header = document.getElementById("Pick");
-var btns = header.getElementsByClassName("btn");
+var count=1;
+var header = document.getElementById(Pick);
+var btns = header.getElementsByClassName(btn);
 for (var i = 0; i < btns.length; i++) {
   btns[i].addEventListener("click", function() {
   var current = document.getElementsByClassName(" active");
   if (current.length > 0) {
     current[0].className = current[0].className.replace(" active", "");
   }
+
   this.className += " active";
   });
 }
+
 </script>

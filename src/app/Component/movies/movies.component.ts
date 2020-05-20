@@ -12,12 +12,21 @@ import { Router, NavigationExtras } from '@angular/router';
   styleUrls: ['./movies.component.css']
 })
 export class MoviesComponent implements OnInit {
+
+
+  newColor = false;
+
+  toggleColor() {
+    this.newColor = !this.newColor;
+  }
+
   @Input()
   @Output()notify: EventEmitter<string> = new EventEmitter<string>();
   onClick(test: movie): void{
   console.log(test);
   return;
   this.notify.emit("message from theater")
+
 }
   MovieId: any;
   Tittle: any;
@@ -36,6 +45,9 @@ export class MoviesComponent implements OnInit {
   movie: movie[] =[];
   genres: Genre[]=[];
   Tseat: tseats[];
+
+
+
 
   constructor(private service: HttpService, private router: Router) { }
   // dependcie injection
