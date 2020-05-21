@@ -13,7 +13,7 @@ import { JsonPipe } from '@angular/common';
 export class TheaterComponent {
   constructor(private route:ActivatedRoute) { }
   Booked : boolean = true;
-  biografseats: Number[][] =
+  biografseats: number[][] =
   [
     [1,0,0,0,0,0],
     [0,0,0,0,0,0],
@@ -22,11 +22,23 @@ export class TheaterComponent {
     [0,0,0,0,0,0],
     [1,0,0,1,0,0]
   ];
+  selectseats: number=0;
+
+  biografTicket: number[][] =
+  [
+    // [9,11,13,15, 17],
+    // [18,20,21,23,24]
+    [1,0,0,0, 0],
+    [0,1,0,0,0]
+  ];
+  selectTickets: number=0;
 // liste af en liste af numbers
-selectseats: number=0;
+
+
 
  @Input()
  @Output()
+
 movie:movie;
 
   ngOnInit(): void {
@@ -51,6 +63,23 @@ movie:movie;
       return;
     }
   }
+
+  selectTicket(t:number, d:number)
+  {
+    console.log(t+","+d)
+    if(this.biografTicket[t][d] == 0)
+    {
+      this.biografTicket[t][d] = 2;
+      this.selectTickets++
+      return;
+    }
+    if(this.biografTicket[t][d] == 2)
+    {
+      this.biografTicket[t][d] = 0;
+      this.selectTickets--
+      return;
+    }
+  }
   // her tjekker den for row og seat er booket eller ej
 
   classSelector(r:number,s:number){
@@ -71,7 +100,26 @@ movie:movie;
         }
     }
 
+
     //her laver vi en switch for alle case senarierne(seat avalible er i deafult)
+  }
+  classSelectorTicket(t:number, d:number){
+    switch(this.biografTicket[t][d])
+    {
+        case 1:
+        {
+          return "cinnemafull"
+        }
+        case 2:
+        {
+          return "TicketSelected"
+        }
+        // default
+        default:
+        {
+          return "ticketAvalible"
+        }
+    }
   }
     // Json.parse er en converter
     // route vi det object vi går ind i og det gør vi kan få fat i vores route i url

@@ -13,16 +13,16 @@
     text-align: center;
   }
 
-/* seat button */
+/*buttons */
   .btn {
   border: none;
   outline: none;
-  padding: 5px 5px;
+  padding: 10px 10px;
   background-color: #f1f1f1;
   cursor: pointer;
 }
 
-
+/* seat */
 .seatTaken{
   background-color: red;
 }
@@ -33,12 +33,23 @@
   background-color: green;
 }
 
+/* time  */
+.cinnemafull{
+  background-color: red;
+}
+.TicketSelected{
+  background-color: yellow;
+}
+.ticketAvalible{
+  background-color: green;
+}
+
 </style>
    <!-- <select [(ngModel)]="Tseat" name= "Tseat">
     <option *ngFor="let item of tseats" [ngValue]="item">{{item}}</option>
   </select>  -->
 
-  <h1>Valgt Film:</h1><br>
+<h1>Valgt Film:</h1><br>
 <br>
 <label for="">Titel: {{movie.tittle}}</label><br>
 <label for="">Desciption: {{movie.description}}</label><br>
@@ -65,13 +76,25 @@
   <label>Vælg tidspunkt:</label><br>
   <input type="date"><br><br>
   <br>
+
+<p>Vælg tidspunkt</p>
+<p>hver firkant simulere tidspunkterne som vidst her</p><br>
+<p>Tidspunkter row 1: 9.00, 10.30, 12.00, 13.00, 15.00 </p>
+<p>Tidspunkter row 2: 17.00, 20.30, 21.10, 22.00, 24.00 </p><br>
+
+<p>Tidspunkt valgt: {{selectTickets}} </p>
+<div style="clear: both; display:inline-block">
+  <!-- danner ramme for ticket -->
+  <div style ="display:block; clear: both;" *ngFor="let time of biografTicket; let t=index">
+    <div [ngClass]="classSelectorTicket(t,d)" style ="float: left; padding: 3px; margin: 2px;" *ngFor="let pickdate of time; let d=index">
+    <button (click)="selectTicket(t,d)" class="btn" ><img src="https://thumbs.dreamstime.com/z/time-clock-icon-watch-concept-stopwatch-symbol-118122899.jpg"alt="1" width="30" height="30"></button>
+    </div>
+  </div><br>
+  <button>Læg i kurv</button>
 </div>
 
 <!-- <label for="">plads: {{tseats.row}}</label><br>
 <label for="">række: {{tseats.}}</label><br> -->
-<br>
-<button>Læg i kurv</button>
-  <br>
 
 
 <!-- dato -->
