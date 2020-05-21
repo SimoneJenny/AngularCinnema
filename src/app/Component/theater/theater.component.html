@@ -75,8 +75,11 @@
 <div style="clear: both; display:block; margin-top: 25px;">
   <label>Vælg tidspunkt:</label><br>
   <input type="date"><br><br>
-  <br>
+  <!-- vis tidspunkt via udskrift -->
+  <p>Tidspunkt valgt: {{selectedDate}} </p>
 
+<br>
+<p>OBS: Vi har faste tidspunkter pr. film</p><br>
 <p>Vælg tidspunkt</p>
 <p>hver firkant simulere tidspunkterne som vidst her</p><br>
 <p>Tidspunkter row 1: 9.00, 10.30, 12.00, 13.00, 15.00 </p>
@@ -90,7 +93,8 @@
     <button (click)="selectTicket(t,d)" class="btn" ><img src="https://thumbs.dreamstime.com/z/time-clock-icon-watch-concept-stopwatch-symbol-118122899.jpg"alt="1" width="30" height="30"></button>
     </div>
   </div><br>
-  <button>Læg i kurv</button>
+  <button (click)="inbasket()">Læg i kurv</button><br>
+  <p>Afvent bekræftelse på mail</p>
 </div>
 
 <!-- <label for="">plads: {{tseats.row}}</label><br>
@@ -98,11 +102,11 @@
 
 
 <!-- dato -->
-  <p id="demo"></p>
+  <p id="datepick"></p>
 <script>
    function getDate() {
       var x = document.getElementById("myDate").value;
-      document.getElementById("demo").innerHTML = x;
+      document.getElementById("datepick").innerHTML = x;
     }
 // sæder
 </script>

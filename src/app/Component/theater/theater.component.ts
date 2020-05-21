@@ -33,6 +33,7 @@ export class TheaterComponent {
   ];
   selectTickets: number=0;
 // liste af en liste af numbers
+selectedDate: string="";
 
 
 
@@ -80,6 +81,12 @@ movie:movie;
       return;
     }
   }
+
+  selectedDates()
+  {
+    console.log("dato valgt")
+
+  }
   // her tjekker den for row og seat er booket eller ej
 
   classSelector(r:number,s:number){
@@ -120,6 +127,9 @@ movie:movie;
           return "ticketAvalible"
         }
     }
+  }
+  inbasket(){
+    alert("lagt i kurv")
   }
     // Json.parse er en converter
     // route vi det object vi går ind i og det gør vi kan få fat i vores route i url

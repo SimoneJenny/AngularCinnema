@@ -78,6 +78,7 @@
 <!-- update -->
 <form (ngsubmit)="UpdateMovie()" class ="designdbupdate">
   <h1>Opdater en film i Biografen</h1>
+  <p>Søg efter filmen via dens titel</p>
   <br>
   <label for="Tittle"> Title<br></label><input type="text" name="Tittle" [(ngModel)]="movie2.tittle">
   <br>
@@ -89,6 +90,6 @@
   <label for="Theater">Theater: <br></label><input type="text" name="Theater"[(ngModel)]="movie2.theater"><br>
   <br><button (click)="searchMovies()">Hent film</button><br>
   <br><button (click)="UpdateMovie()">Opdater film</button>
-  
+
 </form>
 <br><br>
