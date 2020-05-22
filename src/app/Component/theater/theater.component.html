@@ -67,8 +67,8 @@
     <!-- række -->
     <div [ngClass]="classSelector(r,s)" style ="float: left; padding: 3px; margin: 2px;" *ngFor="let seat of row; let s=index">
     <!-- sæde -->
-    <button (click)="selectseat(r,s)" class="btn"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"></button>
-    </div>
+    <button (click)="selectseat(r,s)" class="btn" style=" width: 70px;"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"><br>{{showseats[r][s]}}</button>
+  </div>
   </div>
 </div>
 
@@ -81,16 +81,12 @@
 <br>
 <p>OBS: Vi har faste tidspunkter pr. film</p><br>
 <p>Vælg tidspunkt</p>
-<p>hver firkant simulere tidspunkterne som vidst her</p><br>
-<p>Tidspunkter row 1: 9.00, 10.30, 12.00, 13.00, 15.00 </p>
-<p>Tidspunkter row 2: 17.00, 20.30, 21.10, 22.00, 24.00 </p><br>
-
 <p>Tidspunkt valgt: {{selectTickets}} </p>
 <div style="clear: both; display:inline-block">
   <!-- danner ramme for ticket -->
   <div style ="display:block; clear: both;" *ngFor="let time of biografTicket; let t=index">
     <div [ngClass]="classSelectorTicket(t,d)" style ="float: left; padding: 3px; margin: 2px;" *ngFor="let pickdate of time; let d=index">
-    <button (click)="selectTicket(t,d)" class="btn" ><img src="https://thumbs.dreamstime.com/z/time-clock-icon-watch-concept-stopwatch-symbol-118122899.jpg"alt="1" width="30" height="30"></button>
+    <button (click)="selectTicket(t,d)" class="btn" style=" width: 54px;"  ><img src="https://thumbs.dreamstime.com/z/time-clock-icon-watch-concept-stopwatch-symbol-118122899.jpg"alt="1" width="30" height="30"><br>{{showtime[t][d]}}</button>
     </div>
   </div><br>
   <button (click)="inbasket()">Læg i kurv</button><br>

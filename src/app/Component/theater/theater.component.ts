@@ -24,18 +24,29 @@ export class TheaterComponent {
   ];
   selectseats: number=0;
 
-  biografTicket: number[][] =
+showtime: string[][]=
+[
+  ["9.30","10.50","13.00","15.00", "17.00"],
+  ["18.00","20.00","21.00","23.00","24.00"]
+];
+
+showseats: string[][]=
+[
+  ["s0,row0", "s1,row0","s2,row0","s3,row0","s4,row0","s4,row0"],
+  ["s0,row1", "s1,row1","s2,row1","s3,row1","s4,row1","s4,row1" ],
+  ["s0,row2","s1,row2","s2,row2","s3,row2","s4,row2","s4,row2" ],
+  ["s0,row3","s1,row3","s2,row3","s3,row3","s4,row3","s4,row3" ],
+  ["s0,row4","s1,row4","s2,row4","s3,row4","s4,row4","s4,row4" ],
+  ["s0,row5","s1,row5","s2,row5","s3,row5","s4,row5","s4,row5" ],
+]
+biografTicket: number[][] =
   [
-    // [9,11,13,15, 17],
-    // [18,20,21,23,24]
     [1,0,0,0, 0],
     [0,1,0,0,0]
   ];
   selectTickets: number=0;
 // liste af en liste af numbers
 selectedDate: string="";
-
-
 
  @Input()
  @Output()
@@ -61,7 +72,6 @@ movie:movie;
     {
       this.biografseats[r][s] = 0;
       this.selectseats--
-      return;
     }
   }
 
@@ -72,7 +82,9 @@ movie:movie;
     {
       this.biografTicket[t][d] = 2;
       this.selectTickets++
+      // alert(this.selectTickets) viser status
       return;
+
     }
     if(this.biografTicket[t][d] == 2)
     {
@@ -131,6 +143,7 @@ movie:movie;
   inbasket(){
     alert("lagt i kurv")
   }
+
     // Json.parse er en converter
     // route vi det object vi går ind i og det gør vi kan få fat i vores route i url
   }
