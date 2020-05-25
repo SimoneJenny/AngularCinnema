@@ -49,6 +49,9 @@ export class HttpService {
 //   getnewpassword(newpassword:string):Observable<Users>{{
 //     return this.http.get<movie>(`${this.urlstart}Users/${newpassword}`, httpoptions);
 // }}
+getdatevalue(getdate:string):Observable<any>{{
+  return this.http.get<any>(`${this.urlstart}Theater/${getdate}`, httpoptions);
+}}
 
 
 }

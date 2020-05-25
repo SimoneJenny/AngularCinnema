@@ -1,0 +1,23 @@
+.plakat {
+  position: relative;
+  float: left;
+  margin-right: 16px;
+  margin-bottom: 16px;
+  transform: scale(1.05);
+}
+.plakat-content {
+  display: none;
+  position:fixed;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.plakat:hover .plakat-content {
+  display: block;
+}
+
+.desc {
+  padding: 19px;
+  text-align: center;
+}
