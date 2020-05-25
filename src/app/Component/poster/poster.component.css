@@ -1,6 +1,7 @@
 .plakat {
   position: relative;
   float: left;
+  /* disse 2 laver mellemrum mellem plakaterne */
   margin-right: 16px;
   margin-bottom: 16px;
   transform: scale(1.05);
@@ -16,7 +17,6 @@
 .plakat:hover .plakat-content {
   display: block;
 }
-
 .desc {
   padding: 19px;
   text-align: center;
