@@ -40,12 +40,16 @@ export class MoviesComponent implements OnInit {
   movie: movie[] =[];
   genres: Genre[]=[];
   Tseat: tseats[];
+  moviesearchlist: movie[]=[];
+  moviesearchtxt: string;
+  genresearchlist: Genre[]=[];
+
 
   constructor(private service: HttpService, private router: Router) { }// dette er en dependcie injection
 
   ngOnInit(): void {
 
-  this.service.getMovie().subscribe(arg => this.movie = arg);console.log(this.movie);
+  this.service.getMovie().subscribe(arg =>{this.movie = arg});console.log(this.movie);
 
   this.service.getgenre().subscribe(arg => { this.genres = arg; console.log(this.genres);
   });
@@ -77,6 +81,20 @@ export class MoviesComponent implements OnInit {
         }
       };
       this.router.navigate(["Show"], navigationtonewpage)
+    }
+    lookforchange()
+    {
+      // console.log(this.moviesearchtxt);
+      if(this.moviesearchtxt=="")
+      {
+        this.moviesearchlist =[]
+      }
+      else
+      {
+        this.moviesearchlist = this.movie.filter(m => m.tittle.toLowerCase().indexOf(this.moviesearchtxt.toLowerCase(),0)>-1)
+        this.genresearchlist = this.genres.filter(g => g.genres.toLowerCase().indexOf(this.moviesearchtxt.toLowerCase(),0)>-1)
+      }
+
     }
 
 

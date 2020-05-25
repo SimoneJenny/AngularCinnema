@@ -1,11 +1,29 @@
 <!-- Her kan man søge efter film -->
 <form action="/Film1" class="getmovie">
   <h1>Find film</h1>
+
+<!-- <input ng-model="search" placeholder="search movie"/>
+<th ng-repeat="movie in movie | searchField: 'tittle': 'title' | filter: search">
+  {{moviegenre |json}}
+</th> -->
+
+<input (keyup)="lookforchange()" type="text" placeholder="Search by tittle og Genre" [(ngModel)]="moviesearchtxt" name="search"/>
+<div *ngIf="moviesearchlist.length >0"><b>Tittle:</b></div>
+<!-- hvis der elemenete på liste så skal vise  -->
+<div *ngFor="let m of moviesearchlist">
+{{m.tittle}}
+</div><br>
+<div *ngIf="genresearchlist.length >0"><b>Genre</b></div>
+<div *ngFor="let g of genresearchlist">
+  {{g.genres}}
+  </div>
+
+
   <br><br>
-  <label for="Genrenumber">Genre:  </label><br>
-  <select [(ngModel)]="moviegenre" name="temp" multiple>
+  <!-- <label for="Genrenumber">Genre:  </label><br> -->
+  <!-- <select [(ngModel)]="moviegenre" name="temp" multiple>
     <option *ngFor="let genreobj of genres" [value]="genreobj.genreId">{{genreobj.genres}}</option>
-  </select>
+  </select> -->
   <br>
   <label for= "movies">Film</label><br>
   <select [(ngModel)]="moviegenre" name= "movies">
@@ -22,8 +40,6 @@
     <select [(ngModel)]="genres" name= "genre">
       <option *ngFor="let items of genres" [ngValue]=items >{{items.genres}}</option>
     </select>
-    <p>viser film med den genre</p>
-    {{moviegenre |json}}
 
 
   <br><br><p>For at vælge en film, tryk på order knappen for at bestille</p><br>
@@ -33,6 +49,7 @@
     MovieTittle:  {{movieobj.tittle}}
   </div>
 </form>
+
 
 <!-- gamle forløkker -->
 <!-- <div *ngFor="let movieobj of movie">
