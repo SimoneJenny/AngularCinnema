@@ -18,17 +18,17 @@
 
 <!-- søg via genre -->
 
-    <p>søg efter Film via genre</p>
-    <label for= "genre">Genre</label><br>
+    <label for= "genre">Søg via Genre</label><br>
     <select [(ngModel)]="genres" name= "genre">
       <option *ngFor="let items of genres" [ngValue]=items >{{items.genres}}</option>
     </select>
     <p>viser film med den genre</p>
+    {{moviegenre |json}}
 
 
   <br><br><p>For at vælge en film, tryk på order knappen for at bestille</p><br>
   <div *ngFor="let movieobj of movie">
-    <br><button (click)="orderfrommovie(movieobj)">Order item</button><br>
+    <br><button (click)="orderfrommovie(movieobj)">Ticket</button><br>
     movieId:   {{movieobj.movieId}}<br>
     MovieTittle:  {{movieobj.tittle}}
   </div>
