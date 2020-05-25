@@ -16,20 +16,18 @@ import { AdminMovieComponent } from './admin/admin-movie/admin-movie.component';
 import { ForgotloginComponent } from './component/forgotlogin/forgotlogin.component'; //app get, set'
 
 const routes : Routes =[
-  {path : 'Movies', component: MoviesComponent}, //skal matche
+  // skal matche hvad der står i ''
+  {path : 'Movies', component: MoviesComponent},
   {path : 'Show', component: TheaterComponent},
-  {path : 'Profile', component: UserProfileComponent}, //skal matche
-  {path : 'Info', component: ContactComponent}, //skal matche
+  {path : 'Profile', component: UserProfileComponent},
+  {path : 'Info', component: ContactComponent},
   {path : 'Poster', component: PosterComponent},
   {path : 'seat', component: TheaterComponent},
   {path : 'Admin', component: AdminMovieComponent},
   {path : 'Fpassword', component: ForgotloginComponent},
-
-  //booking
-  // {path : 'seat/:movieId', component: TheaterComponent}, //booking
 ]
 @NgModule({
-  declarations: [ //components, directives, pipes
+  declarations: [ //dette til components, directives og  pipes
     AppComponent,
     UserProfileComponent,
     MoviesComponent,
@@ -40,7 +38,7 @@ const routes : Routes =[
     AdminMovieComponent,
     ForgotloginComponent
   ],
-  imports: [ //modules
+  imports: [ //dette er til modules
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(routes),
@@ -48,7 +46,7 @@ const routes : Routes =[
     FormsModule
   ],
 
-  providers: [], //services
+  providers: [], //dette er til services
   bootstrap: [AppComponent]
 })
 export class AppModule { }
