@@ -1,3 +1,4 @@
+<!-- Her kan man søge efter film -->
 <form action="/Film1" class="getmovie">
   <h1>Find film</h1>
   <br><br>
@@ -9,9 +10,9 @@
   <label for= "movies">Film</label><br>
   <select [(ngModel)]="moviegenre" name= "movies">
     <option *ngFor="let item of movie" [ngValue]=item >{{item.tittle}}</option>
-
   </select>
   <br><br>
+  
   <p>mere info om filmen</p>
   {{moviegenre |json}}
   <br><br><br>
@@ -22,91 +23,14 @@
     movieId:   {{movieobj.movieId}}<br>
     MovieTittle:  {{movieobj.tittle}}
   </div>
-  <!-- <div class="container" (click)="onClick($event)">
-    <a routerLink ="/seat" routerLinkActive ="active">Book sæder</a>
-  </div> -->
-
-  <br>
-  <br>
 </form>
 
+
+<!-- gamle forløkker -->
 <!-- <div *ngFor="let movieobj of movie">
   <br><button (click)="orderfrommovie(movieobj)">Order seats</button>
   movieId:   {{movieobj.movieId}} | MovieTittle:  {{movieobj.tittle}}| MovieDescription:  {{movieobj.description}}| MovieDescription: {{movieobj.runtime}}
 </div> -->
-
-<!-- Post movie -->
-<!-- <form (ngsubmit)="postMovie()">
-  <h1>Tilføj film i Biografen</h1>
-  <br>
-  <label for="Tittle"> Title<br></label><input type="text" name="Tittle" [(ngModel)]="Tittle" placeholder="Add Tittle">
-  <br>
-  <label for="Description">Description:<br></label><input type="text" name="Description" [(ngModel)]="Description" placeholder="Add Description"><br>
-  <label for="ReleaseDateTime">ReleaseDateTime: <br></label><input type="text" name="ReleaseDateTime" [(ngModel)]="ReleaseDateTime" placeholder="Add ReleaseDateTime"><br>
-  <label for="Runtimeto">Runtime: <br> </label><input type="text" name="Runtime" [(ngModel)]="Runtime" placeholder="Add Runtime"><br>
-  <label for="Rating">Rating:  <br></label><input type="text" name="Rating" [(ngModel)]="Rating" placeholder="Add Rating"><br>
-  <label for="MainActors">MainActors: <br> </label><input type="text" name="MainActors"[(ngModel)]="MainActors" placeholder="add MainActors"><br>
-  <label for="Theater">Theater: <br></label><input type="text" name="Theater"[(ngModel)]="Theater" placeholder="Add Theater"><br>
-  <label for="Genrenumber">Genre:  </label><br>
-  <select [(ngModel)]="moviegenre" name="temp" multiple>
-    <option *ngFor="let genreobj of genres" [value]="genreobj.genreId">{{genreobj.genres}}</option>
-  </select><br>
-  <button (click)="postMovie()"> post</button>
-</form>
-<br>
-  <br> -->
-
-<!-- delete -->
-<!-- <form class="designdb">
-<h1>Slet film</h1>
-<div *ngFor="let movieobj of movie">
-  <label for=movieId>Movieid: {{movieobj.movieId}} </label><br>
-  <label for=Titel>Title: {{movieobj.tittle}} </label><br>
-  <label for=Description>Description: {{movieobj.description}} </label><br>
-  <label for=Runtime>Runtime: {{movieobj.runtime}} </label>
-  <br>
-  <button (click)="deleteMovie(movieobj.movieId)" >Slet</button>
-  <br>
-</div>
-<br>
-</form> -->
-
-
-<!-- <style>
-  .dropdown {
-  position: relative;
-  display: inline-block;
-}
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.desc {
-  padding: 15px;
-  text-align: center;
-}
-
-.getmovie{
-  background:gray;
-  padding: 5px;
-  display: inline-block;
-}
-.getmovie li{
-  background: #ffe5e5;
-  padding: 3px;
-  margin-left: 10px;
-  border-color: blue;
-  }
-
-</style> -->
 
 <!-- <h1>Delete</h1>
 <h2>Vælg den film der skal slettes fra databasen</h2>
@@ -120,4 +44,5 @@
   <br><button (click)="orderfrommovie(movieobj)">Order seats</button>
   movieId:   {{movieobj.movieId}} | MovieTittle:  {{movieobj.tittle}}| MovieDescription:  {{movieobj.description}}| MovieDescription: {{movieobj.runtime}}
 </div> -->
+
 

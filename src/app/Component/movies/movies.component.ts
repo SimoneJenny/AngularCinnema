@@ -12,21 +12,16 @@ import { Router, NavigationExtras } from '@angular/router';
   styleUrls: ['./movies.component.css']
 })
 export class MoviesComponent implements OnInit {
-
-
   newColor = false;
-
   toggleColor() {
-    this.newColor = !this.newColor;
-  }
+  this.newColor = !this.newColor;
 
+  }
   @Input()
-  @Output()notify: EventEmitter<string> = new EventEmitter<string>();
+  @Output()
   onClick(test: movie): void{
   console.log(test);
   return;
-  this.notify.emit("message from theater")
-
 }
   MovieId: any;
   Tittle: any;
@@ -46,15 +41,7 @@ export class MoviesComponent implements OnInit {
   genres: Genre[]=[];
   Tseat: tseats[];
 
-
-
-
-  constructor(private service: HttpService, private router: Router) { }
-  // dependcie injection
-  // moviedropdown;
-
-  // moviedata:Array<movie>=[this.moviedropdown]
-
+  constructor(private service: HttpService, private router: Router) { }// dette er en dependcie injection
 
   ngOnInit(): void {
 
@@ -62,9 +49,8 @@ export class MoviesComponent implements OnInit {
 
   this.service.getgenre().subscribe(arg => { this.genres = arg; console.log(this.genres);
   });
-
+// får movie ud med variablerne
   }
-    //get
     getMovie(){
       console.log(this.tempmovie);
 
@@ -80,42 +66,7 @@ export class MoviesComponent implements OnInit {
         moviegenre: this.tempmovie
       }
     }
-
-    // post/add
-    // postMovie(){
-    //   console.log(this.temp)
-    //   // return;
-    //   alert("tilføjet");
-
-    //   const movietoadd={
-    //     Tittle: this.Tittle,
-    //     Description: this.Description,
-    //     ReleaseDateTime: this.ReleaseDateTime,
-    //     Runtime: this.Runtime,
-    //     Rating: this.Rating,
-    //     MainActors: this.MainActors,
-    //     Theater: this.Theater,
-    //     Genrenumber: this.Genrenumber,
-    //     moviegenre: this.temp
-
-    //   }
-    //   this.service.postMovie(movietoadd).subscribe(
-    //     (movietoadded) => {this.movie.push(movietoadded)}
-    //   );
-    // }
-
-    // deleteMovie(movietodelete: number)
-    // {
-    //   console.log(movietodelete);
-    //   this.movie=this.movie.filter(movieobj=>movieobj.movieId!==movietodelete);
-    //   this.service.deleteMovie(movietodelete).subscribe();
-    //   alert("slettet");
-    // }
-
-    // putmovie(){
-
-    // }
-
+// knap der navigere til næste side der hedder show
     orderfrommovie(movieobjtoshow:movie){
       console.log(movieobjtoshow);
       let navigationtonewpage: NavigationExtras={
@@ -126,7 +77,7 @@ export class MoviesComponent implements OnInit {
         }
       };
       this.router.navigate(["Show"], navigationtonewpage)
-    }//end
+    }
 
 
 

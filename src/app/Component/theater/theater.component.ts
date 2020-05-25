@@ -12,8 +12,8 @@ import { JsonPipe } from '@angular/common';
 })
 export class TheaterComponent {
   constructor(private route:ActivatedRoute) { }
-  Booked : boolean = true;
-  biografseats: number[][] =
+Booked : boolean = true; //bliver ikke brugt
+biografseats: number[][] =
   [
     [1,0,0,0,0,0],
     [0,0,0,0,0,0],
@@ -22,7 +22,7 @@ export class TheaterComponent {
     [0,0,0,0,0,0],
     [1,0,0,1,0,0]
   ];
-  selectseats: number=0;
+selectseats: number=0;
 
 showtime: string[][]=
 [
@@ -44,9 +44,9 @@ biografTicket: number[][] =
     [1,0,0,0, 0],
     [0,1,0,0,0]
   ];
-  selectTickets: number=0;
+selectTickets: number=0;
 // liste af en liste af numbers
-selectedDate: string="";
+selectedDate: string="";//bliver ikke brugt
 
  @Input()
  @Output()
@@ -59,6 +59,10 @@ movie:movie;
     }
     )
   }
+// Json.parse er en converter
+// route vi det object vi går ind i og det gør vi kan få fat i vores route i url
+
+//vælg sæde
   selectseat(r: number ,s:number)
   {
     console.log(r+ "," + s)
@@ -74,8 +78,8 @@ movie:movie;
       this.selectseats--
     }
   }
-
-  selectTicket(t:number, d:number)
+//vælg billet
+selectTicket(t:number, d:number)
   {
     console.log(t+","+d)
     if(this.biografTicket[t][d] == 0)
@@ -93,14 +97,13 @@ movie:movie;
       return;
     }
   }
-
+// vælg date fra datepicker, men virker ikke endnu
   selectedDates()
   {
     console.log("dato valgt")
-
   }
-  // her tjekker den for row og seat er booket eller ej
 
+  // her tjekker den for row og seat er booket eller ej
   classSelector(r:number,s:number){
     switch(this.biografseats[r][s])
     {
@@ -120,7 +123,7 @@ movie:movie;
     }
 
 
-    //her laver vi en switch for alle case senarierne(seat avalible er i deafult)
+//her laver vi en switch for alle case senarierne(seat avalible er i deafult)
   }
   classSelectorTicket(t:number, d:number){
     switch(this.biografTicket[t][d])
@@ -140,13 +143,13 @@ movie:movie;
         }
     }
   }
-  inbasket(){
-    alert("lagt i kurv")
-  }
 
-    // Json.parse er en converter
-    // route vi det object vi går ind i og det gør vi kan få fat i vores route i url
+//virker ikke endnu
+  inbasket()
+  {
+    alert("Lagt i kurv")
   }
+}
 
 
 

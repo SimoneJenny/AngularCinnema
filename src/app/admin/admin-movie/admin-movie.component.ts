@@ -88,13 +88,13 @@ searchMovie(){
     // return;
     this.service.updateMovie(this.movie2.movieId, this.movie2).subscribe(
     )
+    alert("Film opdateret")
   }
   searchMovies(){
     this.service.searchMovie(this.movie2.tittle).subscribe(
       (moviefromapi)=>{
         this.movie2=moviefromapi
         console.log(this.movie2);
-        alert()
     }
     )
   }

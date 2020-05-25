@@ -1,0 +1,44 @@
+.seat {
+  position: relative;
+  float: left;
+  margin-right: 16px;
+  margin-bottom: 16px;
+}
+.seat:hover {
+  display: block;
+}
+.desc {
+  padding: 19px;
+  text-align: center;
+}
+
+/*buttons */
+.btn {
+border: none;
+outline: none;
+padding: 10px 10px;
+background-color: #f1f1f1;
+cursor: pointer;
+}
+
+/* seat */
+.seatTaken{
+background-color: red;
+}
+.seatSelected{
+background-color: yellow;
+}
+.seatavalible{
+background-color: green;
+}
+
+/* time  */
+.cinnemafull{
+background-color: red;
+}
+.TicketSelected{
+background-color: yellow;
+}
+.ticketAvalible{
+background-color: green;
+}

@@ -1,42 +1,5 @@
 <p>Her kan den Aministerende redigere i film</p>
 
-<style>
-  .dropdown {
-  position: relative;
-  display: inline-block;
-}
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.desc {
-  padding: 15px;
-  text-align: center;
-}
-
-.designdb{
-  background:gray;
-  padding: 5px;
-  display: inline-block;
-}
-.designdb li{
-  background: #ffe5e5;
-  padding: 3px;
-  margin-left: 10px;
-  border-color: blue;
-  }
-
-</style>
-
-
 <!-- delete -->
 <form class="designdb">
   <h1>Slet film</h1>
@@ -72,10 +35,8 @@
   <br><button (click)="postMovie()">Tilføj film</button>
 </form>
 <br><br>
-<!-- select  -->
 
-
-<!-- update -->
+<!-- select and update -->
 <form (ngsubmit)="UpdateMovie()" class ="designdbupdate">
   <h1>Opdater en film i Biografen</h1>
   <p>Søg efter filmen via dens titel</p>
@@ -90,6 +51,5 @@
   <label for="Theater">Theater: <br></label><input type="text" name="Theater"[(ngModel)]="movie2.theater"><br>
   <br><button (click)="searchMovies()">Hent film</button><br>
   <br><button (click)="UpdateMovie()">Opdater film</button>
-
 </form>
 <br><br>

@@ -1,53 +1,3 @@
-
-
-
-<style>
-  .seat {
-    position: relative;
-    float: left;
-    margin-right: 16px;
-    margin-bottom: 16px;
-  }
-  .seat:hover {
-    display: block;
-  }
-  .desc {
-    padding: 19px;
-    text-align: center;
-  }
-
-/*buttons */
-  .btn {
-  border: none;
-  outline: none;
-  padding: 10px 10px;
-  background-color: #f1f1f1;
-  cursor: pointer;
-}
-
-/* seat */
-.seatTaken{
-  background-color: red;
-}
-.seatSelected{
-  background-color: yellow;
-}
-.seatavalible{
-  background-color: green;
-}
-
-/* time  */
-.cinnemafull{
-  background-color: red;
-}
-.TicketSelected{
-  background-color: yellow;
-}
-.ticketAvalible{
-  background-color: green;
-}
-
-</style>
 <!-- <select [(ngModel)]="Tseat" name= "Tseat">
     <option *ngFor="let item of tseats" [ngValue]="item">{{item}}</option>
   </select>  -->
@@ -55,25 +5,22 @@
 <h1>Valgt Film:</h1><br>
 <br>
 <label for="">Titel: {{movie.tittle}}</label><br>
-<label for="">Desciption: {{movie.description}}</label><br>
 <label for="">ID: {{movie.movieId}}</label><br>
-<label for="">ReleaseDate: {{movie.releaseDateTime}}</label><br>
-<label for="">varighed: {{movie.runtime}}</label><br>
-<label for="">placering : {{movie.theater}}</label>
-<br><br><br>
+<br><br>
 
 <p>Vælg de sæder du ønsker at booke</p>
 <p>du valgt: {{selectseats}} sæde(r)</p>
 <div style="clear: both; display:inline-block">
-  <!-- danner ramme for sæder -->
+  <!-- denne div danner ramme for sæder og række -->
   <div style ="display:block; clear: both;" *ngFor="let row of biografseats; let r=index">
-    <!-- række -->
+    <!-- danner ramme for række -->
     <div [ngClass]="classSelector(r,s)" style ="float: left; padding: 3px; margin: 2px;" *ngFor="let seat of row; let s=index">
-    <!-- sæde -->
+    <!-- danner ramme for sæde -->
     <button (click)="selectseat(r,s)" class="btn" style=" width: 70px;"><img src="https://previews.123rf.com/images/happymay/happymay1404/happymay140400049/27173743-single-cinema-seat.jpg" alt="1" width="30" height="30"><br>{{showseats[r][s]}}</button>
   </div>
   </div>
 </div>
+<!-- pga. der er flere rækker og sæder er det delt op i 2 divs.  -->
 
 <div style="clear: both; display:block; margin-top: 25px;">
   <label>Vælg tidspunkt:</label><br>
@@ -82,13 +29,14 @@
   <p>Tidspunkt valgt: {{selectedDate}} </p>
 
 <br>
-<p>OBS: Vi har faste tidspunkter pr. film</p><br>
 <p>Vælg tidspunkt</p>
 <p>Tidspunkt valgt: {{selectTickets}} </p>
 <div style="clear: both; display:inline-block">
   <!-- danner ramme for ticket -->
   <div style ="display:block; clear: both;" *ngFor="let time of biografTicket; let t=index">
+    <!-- danner ramme for første tid -->
     <div [ngClass]="classSelectorTicket(t,d)" style ="float: left; padding: 3px; margin: 2px;" *ngFor="let pickdate of time; let d=index">
+    <!-- danner ramme for næste række af tid -->
     <button (click)="selectTicket(t,d)" class="btn" style=" width: 54px;"  ><img src="https://thumbs.dreamstime.com/z/time-clock-icon-watch-concept-stopwatch-symbol-118122899.jpg"alt="1" width="30" height="30"><br>{{showtime[t][d]}}</button>
     </div>
   </div><br>
@@ -96,16 +44,18 @@
   <p>Afvent bekræftelse på mail</p>
 </div>
 
+<!-- gemmes  -->
 <!-- <label for="">plads: {{tseats.row}}</label><br>
 <label for="">række: {{tseats.}}</label><br> -->
 
 
-<!-- dato -->
-  <p id="datepick"></p>
+<!-- dato via .js script-->
+<!-- Use innerHTML property of an element to get or set HTML contained within the element.
+The innerHTML property returns the current HTML source of the element, including any change that has been made since the page was loaded. -->
+<p id="datepick"></p>
 <script>
    function getDate() {
       var x = document.getElementById("myDate").value;
       document.getElementById("datepick").innerHTML = x;
     }
-
 </script>
