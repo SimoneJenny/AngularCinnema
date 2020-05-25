@@ -12,19 +12,27 @@
     <option *ngFor="let item of movie" [ngValue]=item >{{item.tittle}}</option>
   </select>
   <br><br>
-  
-  <p>mere info om filmen</p>
-  {{moviegenre |json}}
+  <p>Info om filmen</p>
+  {{moviegenre |json}}<br>
   <br><br><br>
-  <p>For at vælge en film, tryk på order knappen for at bestille</p>
-  <br><br>
+
+<!-- søg via genre -->
+
+    <p>søg efter Film via genre</p>
+    <label for= "genre">Genre</label><br>
+    <select [(ngModel)]="genres" name= "genre">
+      <option *ngFor="let items of genres" [ngValue]=items >{{items.genres}}</option>
+    </select>
+    <p>viser film med den genre</p>
+
+
+  <br><br><p>For at vælge en film, tryk på order knappen for at bestille</p><br>
   <div *ngFor="let movieobj of movie">
     <br><button (click)="orderfrommovie(movieobj)">Order item</button><br>
     movieId:   {{movieobj.movieId}}<br>
     MovieTittle:  {{movieobj.tittle}}
   </div>
 </form>
-
 
 <!-- gamle forløkker -->
 <!-- <div *ngFor="let movieobj of movie">
