@@ -81,7 +81,10 @@ export class MoviesComponent implements OnInit {
         }
       };
       this.router.navigate(["Show"], navigationtonewpage)
-    }
+ }
+// queryparams er en Observable der indeholder queyparameters for alle routes
+    // inde i queyparams(svarer til postman) er der en variable. movieobjtoshow vil vi gerne stingfy. this router routes to show og kaster data afsted.
+
     lookforchange()
     {
       // console.log(this.moviesearchtxt);

@@ -121,8 +121,6 @@ selectTicket(t:number, d:number)
           return "seatavalible"
         }
     }
-
-
 //her laver vi en switch for alle case senarierne(seat avalible er i deafult)
   }
   classSelectorTicket(t:number, d:number){

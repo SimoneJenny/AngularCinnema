@@ -24,12 +24,14 @@ export class AdminMovieComponent implements OnInit {
   tempmovie: any[];
   movie: movie[];
   movie2: movie;
+  // den enkelete movie
   moviegenre: any[];
   moviegenrem: any[];
   genres: Genre[]=[];
 
 
   constructor(private service: HttpService) { }
+  // private har en default constructor
 
   ngOnInit(): void {
 
@@ -55,7 +57,6 @@ searchMovie(){
     console.log(this.temp)
     alert("tilføjet");
 
-
     const movietoadd={
       Tittle: this.Tittle,
       Description: this.Description,
@@ -80,6 +81,7 @@ searchMovie(){
     this.service.deleteMovie(movietodelete).subscribe();
     alert("Film slettet");
   }
+  // filter vælger item fra array og returnre som et nyt array
 
   //put/update
   UpdateMovie()
@@ -97,6 +99,7 @@ searchMovie(){
         console.log(this.movie2);
     }
     )
+    // dette er er et lamba udtryk
   }
 
 }

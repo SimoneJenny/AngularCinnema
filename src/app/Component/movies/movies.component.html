@@ -8,8 +8,9 @@
 </th> -->
 
 <input (keyup)="lookforchange()" type="text" placeholder="Search by tittle og Genre" [(ngModel)]="moviesearchtxt" name="search"/>
+<!-- måler om der er skrevet noget eller ej via længden -->
 <div *ngIf="moviesearchlist.length >0"><b>Tittle:</b></div>
-<!-- hvis der elemenete på liste så skal vise  -->
+<!-- hvis der elementer på liste så skal vise  -->
 <div *ngFor="let m of moviesearchlist">
 {{m.tittle}}
 </div><br>
@@ -36,10 +37,10 @@
 
 <!-- søg via genre -->
 
-    <label for= "genre">Søg via Genre</label><br>
+    <!-- <label for= "genre">Søg via Genre</label><br>
     <select [(ngModel)]="genres" name= "genre">
       <option *ngFor="let items of genres" [ngValue]=items >{{items.genres}}</option>
-    </select>
+    </select> -->
 
 
   <br><br><p>For at vælge en film, tryk på order knappen for at bestille</p><br>
