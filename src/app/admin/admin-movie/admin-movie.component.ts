@@ -28,6 +28,7 @@ export class AdminMovieComponent implements OnInit {
   moviegenre: any[];
   moviegenrem: any[];
   genres: Genre[]=[];
+  //dette er en en tom liste /array
 
 
   constructor(private service: HttpService) { }
@@ -101,5 +102,12 @@ searchMovie(){
     )
     // dette er er et lamba udtryk
   }
+  //subsribe: er en metode til at observere typen. Det er et værktøj der streamer data til en række forskellige komponenter/tjeneser der bruger den
+  //ngif: fjerner/genskaber en del af DOM træet baseret på udtryk
+  //DOM = Document Object Model
+  //Ng-Module: det er en klasse, der tager metadataobjekter. Beskriver hvordan man kompiler en komponentskabelon og hvordan man opretter injections
+  //ng-submit: specificere en funktion, der skal køres
+  //NG-for: det er en indbygget template, der gør det nemt at oprette en skabelon til hvert element
+  //ng-class: giver mulighed for at man dynamisk kan indstille  css klasserne på et html element ved at databinde et udtryk der reprænserer alle klasserne
 
 }

@@ -46,6 +46,7 @@ biografTicket: number[][] =
   ];
 selectTickets: number=0;
 // liste af en liste af numbers
+
 selectedDate: string="";//bliver ikke brugt
 
  @Input()
@@ -60,7 +61,7 @@ movie:movie;
     )
   }
 // Json.parse er en converter
-// route vi det object vi går ind i og det gør vi kan få fat i vores route i url
+// her router vi det object vi går ind i, og det gør vi kan få fat i det i vores route i urlen
 
 //vælg sæde
   selectseat(r: number ,s:number)
