@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Genre } from '../model/genre';
 import { movie } from '../model/movie';
+import { Show } from '../model/show';
 
 const httpoptions={ //dette er en konstant
   headers: new HttpHeaders({
@@ -14,6 +15,7 @@ const httpoptions={ //dette er en konstant
   providedIn: 'root'
 })
 export class HttpService {
+
   // url : string = 'https://localhost:44378/api/Movies';
   urlstart: string ='https://localhost:44378/api/';
   // bliver invoket i metoderne nedenunder
@@ -22,7 +24,10 @@ export class HttpService {
   //Constructor is used to create new instance of a class
   constructor(private http: HttpClient) { }
 
-
+  getShows(movieId: number): Observable<Show[]>{
+    return this.http.get<Show[]>(`${this.urlstart}Shows/movie/${movieId}`);
+    //paremeter, pænere URL
+  }
   //metode for genre
   getgenre(): Observable<Genre[]>{
     return this.http.get<Genre[]>(`${this.urlstart}genres`);

@@ -1,6 +1,5 @@
-export class movie
+export class Show
 {
 showid:number
 movieid:number
-orderid:number
 }

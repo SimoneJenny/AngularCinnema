@@ -5,6 +5,7 @@ import { Genre } from 'src/app/model/genre';
 import { Observable } from 'rxjs';
 import { tseats } from 'src/app/model/theaterseat';
 import { Router, NavigationExtras } from '@angular/router';
+import { Show } from 'src/app/model/show';
 
 @Component({
   selector: 'app-movies',
@@ -43,16 +44,17 @@ export class MoviesComponent implements OnInit {
   moviesearchlist: movie[]=[];
   moviesearchtxt: string;
   genresearchlist: Genre[]=[];
+  showresultforspecikmovie: Show[]=[];
 
 
   constructor(private service: HttpService, private router: Router) { }// dette er en dependcie injection
 
   ngOnInit(): void {
 
-  this.service.getMovie().subscribe(arg =>{this.movie = arg});console.log(this.movie);
-
+  this.service.getMovie().subscribe(arg =>{this.movie = arg; console.log(this.movie);}); //undefined hvis den er ude for service
   this.service.getgenre().subscribe(arg => { this.genres = arg; console.log(this.genres);
   });
+
 // får movie ud med variablerne
   }
     getMovie(){
@@ -98,6 +100,12 @@ export class MoviesComponent implements OnInit {
         this.genresearchlist = this.genres.filter(g => g.genres.toLowerCase().indexOf(this.moviesearchtxt.toLowerCase(),0)>-1)
       }
 
+    }
+    loadshowsformovie(movieId: number)
+    {
+      console.log("load movie");
+      this.service.getShows(movieId).subscribe(arg =>
+        {this.showresultforspecikmovie = arg});
     }
 
 

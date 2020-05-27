@@ -7,14 +7,15 @@
   {{moviegenre |json}}
 </th> -->
 
-<input (keyup)="lookforchange()" type="text" placeholder="Search by tittle og Genre" [(ngModel)]="moviesearchtxt" name="search"/>
+<input (keyup)="lookforchange()" type="text" placeholder="Search by tittle or Genre" [(ngModel)]="moviesearchtxt" name="search"/>
 <!-- måler om der er skrevet noget eller ej via længden -->
 <div *ngIf="moviesearchlist.length >0"><b>Tittle:</b></div>
 <!-- hvis der elementer på liste så skal vise  -->
 <div *ngFor="let m of moviesearchlist">
-{{m.tittle}}
+<div (click)="loadshowsformovie(m.movieId)">{{m.tittle}}</div><br>
 </div><br>
-<div *ngIf="genresearchlist.length >0"><b>Genre</b></div>
+Filmtider: {{showresultforspecikmovie |json}}<br>
+<br><div *ngIf="genresearchlist.length >0"><b>Genre</b></div>
 <div *ngFor="let g of genresearchlist">
   {{g.genres}}
   </div>
